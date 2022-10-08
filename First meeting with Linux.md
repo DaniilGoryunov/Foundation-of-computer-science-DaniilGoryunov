@@ -242,7 +242,8 @@ gnuplot> set xrange [-1 to 1]
 gnuplot> set yrange [-1 to 1]
 gnuplot> plot sin(t),cos(t)
 
-![](assets/16652089881885.jpg)
+![Aspose Words 749064b9-5b3f-4fd3-825a-38a36ed9b199 002](https://user-images.githubusercontent.com/113765574/194692264-4f6f293c-0dc3-4a1e-ac3d-6024dd91f781.png)
+
 
 gnuplot> set zrange [-1 to 1]
 gnuplot> set urange [0 to 2*pi]

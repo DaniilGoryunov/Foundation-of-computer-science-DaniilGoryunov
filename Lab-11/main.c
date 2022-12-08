@@ -1,75 +1,83 @@
 #include <stdio.h>
-#include <stdbool.h>
+#include <ctype.h>
 
-int prov1(char c){
-    char c1,c2,c3;
-    c1=getchar();
-    c2=getchar();
-    c3=getchar();
-    if (c1=='0' && c2=='0' && (c3=='1'||c3=='0'))
-        return true;
-    else return false;
-}
+typedef enum {
+  LOOK,
+  BAD,
+  END,
 
-int prov0(char c){
-    char c1,c2,c3;
-    c1=getchar();
-    c2=getchar();
-    c3=getchar();
-    if ((c1=='1'||c1=='0')&&(c2=='0'||c2=='1')&&(c3=='0'||c3=='1'))
-        return true;
-    else return false;
-}
+  S0,
+  S1,
 
-int konets (int counter){
-    char c;
-    c=getchar();
-    if (c==' '||c=='\n'||c==EOF)
-        counter++;
-    return counter;
-}
+  S00,
+  S01,
+  S10,
 
-int fp(int counter,char c){
-    if (c=='1'){
-        if (prov1(c))
-            counter=konets(counter);
+  S000,
+  S001,
+  S010,
+  S011,
+  S100
+} state;
+
+int main() {
+
+  char c = getchar();
+  int count = 0;
+  state s = LOOK;
+  while (c != EOF) {
+    switch (s) {
+      case LOOK:
+        if (c == '0') s = S0;
+        else if (c == '1') s = S1;
+        else if (!isspace(c)) s = BAD;
+        break;
+      case BAD:
+        if (isspace(c)) s = LOOK;
+        break;
+      case S0:
+        if (c == '0') s = S00;
+        else if (c == '1') s = S01;
+        else s = isspace(c) ? LOOK : BAD;
+        break;
+      case S1:
+        if (c == '0') s = S10;
+        else s = isspace(c) ? LOOK : BAD;
+        break;
+      case S00:
+        if (c == '0') s = S000;
+        else if (c == '1') s= S001;
+        else s = isspace(c) ? LOOK : BAD;
+        break;
+      case S01:
+        if (c == '0') s = S010;
+        else if (c == '1') s = S011;
+        else s = isspace(c) ? LOOK : BAD;
+        break;
+      case S10:
+        if (c == '0') s = S100;
+        else s = isspace(c) ? LOOK : BAD;
+        break;
+      case S000:
+      case S001:
+      case S010:
+      case S011:
+      case S100:
+        if (c == '0') s = END;
+        else if (c == '1') s = END;
+        else s = isspace(c) ? LOOK : BAD;
+        break;
+      case END:
+        if (isspace(c)) {
+          ++count;
+          s = LOOK;
+        } else s = BAD;
+        break;
     }
-    if (c=='0'){
-        if (prov0(c))
-            counter=konets(counter);
-    }
-    return counter;
-}
-    
-int main(){
-    int counter=0;
-    char c;
-    bool f;
-    c=getchar();
-    counter=fp(counter,c);
-    f=false;
-    while (c!=EOF){
-        if (c==' '||c=='\n'){
-            c=getchar();
-            if (c=='1'){
-                if (prov1(c)){
-                    f=true;
-                    c=getchar();
-                    counter=konets(counter);
-                }
-            }
-        }
-        if (c=='0'){
-            if (prov0(c)){
-                f=true;
-                c=getchar();
-                counter=konets(counter);
-            }
-        }
-        if (f==false)
-            c=getchar();
-        else f=false;
-    }
-    printf("\n%d\n",counter);
-    return 0;
+
+    c = getchar();
+  }
+
+  printf("Count: %d\n", count);
+  return 0;
 }

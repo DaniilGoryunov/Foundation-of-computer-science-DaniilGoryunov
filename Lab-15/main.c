@@ -1,5 +1,31 @@
 #include <stdio.h>
 
+int change(int n,int m[n][n],int indmin,int indmax);
+
+int transpose(int n, int m[n][n]);
+
+int main (){
+    int n;
+    scanf ("%d", &n);
+    int m[n][n];
+    for(int i=0;i!=n;++i)
+        for (int j = 0; j != n; ++j)
+            scanf ("%d", &m[i][j]);
+    putchar('\n');
+    m[n][n]=transpose(n, m);
+    for(int i=0;i!=n;++i){
+        int counter=0;
+        for (int j = 0; j != n; ++j){
+            counter++;
+            if (counter % n !=0)
+                printf("%d ", m[i][j]);
+            else
+                printf("%d\n", m[i][j]);
+        }
+    }
+    return 0;
+}
+
 int change(int n,int m[n][n],int indmin,int indmax){
     for (int(j)=0;j<n;j++){
         int(k)=m[indmin][j];
@@ -9,7 +35,7 @@ int change(int n,int m[n][n],int indmin,int indmax){
     return m[n][n];
 }
 
-void maxminind(int n, int m[n][n]){
+int transpose(int n, int m[n][n]){
     int max, min,indmax,indmin,counter=0;
     for (int(i)=0;i<n;i++){
         int prv=1;
@@ -29,29 +55,6 @@ void maxminind(int n, int m[n][n]){
                 min=prv;
                 indmin=i;}
     }
-    m[n][n]=change(n, m,indmin,indmax);
-    for(int i=0;i!=n;++i){
-        counter=0;
-        for (int j = 0; j != n; ++j){
-            counter++;
-            if (counter % n !=0)
-                printf("%d ", m[i][j]);
-            else
-                printf("%d\n", m[i][j]);
-        }
-    }
+    return change(n, m,indmin,indmax);
 }
-
-int main (){
-    int n;
-    scanf ("%d", &n);
-    int m[n][n];
-    for(int i=0;i!=n;++i)
-        for (int j = 0; j != n; ++j)
-            scanf ("%d", &m[i][j]);
-    putchar('\n');
-    maxminind(n, m);
-    return 0;
-}
-
 

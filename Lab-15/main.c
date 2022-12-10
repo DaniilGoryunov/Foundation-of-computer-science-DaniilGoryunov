@@ -1,8 +1,11 @@
 #include <stdio.h>
+#include <limits.h>
 
-int change(int n,int m[n][n],int indmin,int indmax);
+void change(int n,int m[n][n],int indmin,int indmax);
 
-int transpose(int n, int m[n][n]);
+void transform(int n, int m[n][n]);
+
+void output(int n, int (*m)[n]);
 
 int main (){
     int n;
@@ -12,49 +15,41 @@ int main (){
         for (int j = 0; j != n; ++j)
             scanf ("%d", &m[i][j]);
     putchar('\n');
-    m[n][n]=transpose(n, m);
-    for(int i=0;i!=n;++i){
-        int counter=0;
-        for (int j = 0; j != n; ++j){
-            counter++;
-            if (counter % n !=0)
-                printf("%d ", m[i][j]);
-            else
-                printf("%d\n", m[i][j]);
-        }
-    }
+    transform(n, m);
+    output(n, m);
     return 0;
 }
 
-int change(int n,int m[n][n],int indmin,int indmax){
-    for (int(j)=0;j<n;j++){
-        int(k)=m[indmin][j];
+void change(int n,int m[n][n],int indmin,int indmax){
+    for (int j = 0;j<n;j++){
+        int k = m[indmin][j];
         m[indmin][j]=m[indmax][j];
         m[indmax][j]=k;
     }
-    return m[n][n];
 }
 
-int transpose(int n, int m[n][n]){
-    int max, min,indmax,indmin,counter=0;
-    for (int(i)=0;i<n;i++){
+void transform(int n, int m[n][n]){
+    int max=INT_MIN, min=INT_MAX,indmax=0,indmin=0;
+    for (int i = 0;i<n;i++){
         int prv=1;
         for (int(j)=0;j<n;j++)
             prv=prv*m[i][j];
-        if (counter==0){
+        if (max<=prv){
             max=prv;
-            indmax=i;
+            indmax=i;}
+        if (min>=prv){
             min=prv;
-            indmax=i;
-            counter++;
-        }else
-            if (max<=prv){
-                max=prv;
-                indmax=i;}
-            if (min>=prv){
-                min=prv;
-                indmin=i;}
+            indmin=i;}
     }
-    return change(n, m,indmin,indmax);
+    change(n, m,indmin,indmax);
+}
+
+void output(int n, int (*m)[n]){
+    for(int i = 0;i!=n;++i){
+        putchar('\n');
+        for (int j = 0; j != n; ++j){
+            printf("%d ", m[i][j]);
+        }
+    }
 }
 

@@ -86,6 +86,17 @@ int main(void) {
 Подпись преподавателя _____________________
 ## 8. Распечатка протокола 
 ```
+Dfgkhlj;k
+
+Ffffff
+45678uhbgfdefyui
+%tcfygvbh%
+
+1
+Program ended with exit code: 0
+```
+
+```
 fgh 12345vbhj
 
 

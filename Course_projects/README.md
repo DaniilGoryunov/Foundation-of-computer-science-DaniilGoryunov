@@ -1,4 +1,4 @@
 # Навигация 
 
 ## Первая курсовая
-[1](./Course_project_1)
+[1](./Course_project_1/КП1.docx)

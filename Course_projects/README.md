@@ -1,1 +1,1 @@
-[Первая курсовая] (./Course_projects/КП1.docx)
+[Первая курсовая] (./Course_project/КП1.docx)

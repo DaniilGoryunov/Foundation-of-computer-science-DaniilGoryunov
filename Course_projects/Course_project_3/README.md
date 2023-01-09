@@ -4,8 +4,8 @@
 #include <math.h>
 #include <assert.h>
 
-#define MAX_ITER_COUNT (100)
-#define K (1.0)
+#define MAX_ITER 100
+#define K 0.1
 
 typedef struct {
     double sum;
@@ -29,7 +29,7 @@ Taylor taylor_log(double func_arg) {
         return res;
     }
     res.sum += term;
-    for (int n = 1; (n < MAX_ITER_COUNT) && (term > (epsilon() * K)); ++n) {
+    for (int n = 1; (n < MAX_ITER) && (term > (epsilon() * K)); ++n) {
         ++res.iters_count;
         term = pow(-1, n-1)*(pow(x, n)/(n*pow(2, n)));
         if (res.sum + term == res.sum) break;
@@ -38,7 +38,7 @@ Taylor taylor_log(double func_arg) {
     return res;
 }
 
-void print_table(double a, double b, int n) {
+void output(double a, double b, int n) {
     double step = (b - a) / n, x;
     printf("    x       log        taylor_log   i\n");
     for (int i = 0; i < n; ++i) {
@@ -50,7 +50,7 @@ void print_table(double a, double b, int n) {
 int main(void) {
     const double a = -1.0, b = 1.0;
     const int n = 30;
-    print_table(a, b, n);
+    output(a, b, n);
     return 0;
 }
 ```

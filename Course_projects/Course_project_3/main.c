@@ -6,7 +6,7 @@
 #define K 1
 
 typedef struct {
-    double sum;
+    double sum, pow0, pow1, pow2;
     int iters_count;
 } Taylor;
 
@@ -19,16 +19,22 @@ double epsilon(void) {
 }
 
 Taylor taylor_log(double func_arg) {
-    Taylor res;
+    Taylor res,pow0,pow1,pow2;
     res.sum = 0.0;
     res.iters_count = 0;
+    res.pow0 = 1.0;
+    res.pow2 = 2.0;
     double term = log(2), x = func_arg;
+    res.pow1=x;
     res.sum += term;
     for (int n = 1; (n < MAX_ITER && fabs(term) >= epsilon()); n++) {
         res.iters_count++;
-        term = pow(-1, n-1)*(pow(x, n)/(n*pow(2, n)));
+        term = res.pow0*(res.pow1/(n*res.pow2));
         if (res.sum + term == res.sum) break;
         res.sum += term;
+        res.pow0 *= -1.0;
+        res.pow1 *= x;
+        res.pow2 *= 2;
     }
     return res;
 }
@@ -48,3 +54,5 @@ int main(void) {
     output(a, b, n);
     return 0;
 }
+
+

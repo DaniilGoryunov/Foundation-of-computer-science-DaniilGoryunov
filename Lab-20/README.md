@@ -74,6 +74,63 @@
 
 ```
 Last login: Fri Mar 17 15:18:27 on ttys000
+Last login: Fri Mar 24 16:14:57 on ttys001
+admin@MacBook-Pro-Admin ~ % xargs -t
+^Z
+zsh: suspended  xargs -t
+admin@MacBook-Pro-Admin ~ % cd Desktop
+admin@MacBook-Pro-Admin Desktop % ls ~/Изображения | xargs -t -L1 echo
+ls: /Users/admin/Изображения: No such file or directory
+admin@MacBook-Pro-Admin Desktop % cd ..
+admin@MacBook-Pro-Admin ~ % ls ~/Desktop | xargs -t -L1 echo
+echo KBH
+KBH
+echo Microsoft Excel
+Microsoft Excel
+echo Microsoft Word
+Microsoft Word
+echo PyCharm CE
+PyCharm CE
+echo Python 3.10
+Python 3.10
+echo pythonProject
+pythonProject
+echo МАИ
+МАИ
+echo ФИЛЬМЫ
+ФИЛЬМЫ
+echo проект ркт
+проект ркт
+echo Снимок экрана 2022-10-23 в 19.40.53.png
+Снимок экрана 2022-10-23 в 19.40.53.png
+echo Снимок экрана 2022-10-23 в 20.32.19.png
+Снимок экрана 2022-10-23 в 20.32.19.png
+admin@MacBook-Pro-Admin ~ % ls ~/Desktop | xargs -t  echo   
+echo KBH Microsoft Excel Microsoft Word PyCharm CE Python 3.10 pythonProject МАИ ФИЛЬМЫ проект ркт Снимок экрана 2022-10-23 в 19.40.53.png Снимок экрана 2022-10-23 в 20.32.19.png
+KBH Microsoft Excel Microsoft Word PyCharm CE Python 3.10 pythonProject МАИ ФИЛЬМЫ проект ркт Снимок экрана 2022-10-23 в 19.40.53.png Снимок экрана 2022-10-23 в 20.32.19.png
+admin@MacBook-Pro-Admin ~ % ls ~/Desktop | xargs -t -L1 echo
+echo KBH
+KBH
+echo Microsoft Excel
+Microsoft Excel
+echo Microsoft Word
+Microsoft Word
+echo PyCharm CE
+PyCharm CE
+echo Python 3.10
+Python 3.10
+echo pythonProject
+pythonProject
+echo МАИ
+МАИ
+echo ФИЛЬМЫ
+ФИЛЬМЫ
+echo проект ркт
+проект ркт
+echo Снимок экрана 2022-10-23 в 19.40.53.png
+Снимок экрана 2022-10-23 в 19.40.53.png
+echo Снимок экрана 2022-10-23 в 20.32.19.png
+Снимок экрана 2022-10-23 в 20.32.19.png
 admin@MacBook-Pro-Admin ~ % cd desktop/МАИ/первый/IT-разработка/mai_future_xr  
 admin@MacBook-Pro-Admin mai_future_xr % cd ..
 admin@MacBook-Pro-Admin IT-разработка % cd ..

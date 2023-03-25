@@ -153,6 +153,11 @@ labalaba11
 labalaba14
 musorka
 ~$звитие исторической науки в России.docx
+admin@MacBook-Pro-Admin лабы % date | tee вывод1.txt вывод2.txt
+суббота, 25 марта 2023 г. 18:50:13 (MSK)
+admin@MacBook-Pro-Admin лабы % cat вывод1.txt
+суббота, 25 марта 2023 г. 18:50:13 (MSK)
+admin@MacBook-Pro-Admin лабы % 
 admin@MacBook-Pro-Admin лабы % cd Foundation-of-computer-science-DaniilGoryunov
 admin@MacBook-Pro-Admin Foundation-of-computer-science-DaniilGoryunov % cd lab-20
 admin@MacBook-Pro-Admin lab-20 % touch README.md

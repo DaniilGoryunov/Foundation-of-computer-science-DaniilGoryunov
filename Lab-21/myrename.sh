@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#error
 function die() {
     echo "$@" >&2
     exit 1
@@ -12,14 +13,19 @@ fi
 name_dir=$1
 suffix=$2
 prefix=$3
-if (( $# != 3 )); then
-    die "Недостаточно аргументов. Пожалуйста, передайте в качестве аргумента имя. Пример: $0 Desktop/МАИ/первый txt 123"
+if (( $# != 3 )); then #error
+    die "Usage: $0 [directory] [suffix] [prefix]"
 fi
+
+
+# проход по файлам в директории
 for file in "$name_dir"/*
-do 
-    file_name="$(basename "$file")"
-    file_ext="${file_name##*.}"
+do
+    file_name="$(basename "$file")" # полное имя файла
+    echo $file_name
+    file_ext="${file_name##*.}" # берем расширение
+    new_file_name="$name_dir"/"$prefix""$file_name" # создаем новое имя файла
     if [[ $file_ext == $suffix ]]; then 
-        mv $file "$name_dir"/"$prefix""$file_name"
+        mv $file $new_file_name
     fi
 done

@@ -36,6 +36,7 @@
 • Написать тесты 
 • Запустить программу
 ## 7. Сценарий выполнения работы [план работы, первоначальный текст программы в черновике (можно на отдельном листе) и тесты либо соображения по тестированию]. 
+Bash-скрипт
 ```Shell:/Lab-21/myrename.sh
 #!/bin/bash
 
@@ -68,8 +69,33 @@ do
         mv $file $new_file_name
     fi
 done
-
 ```
+Python-скрипт
+```Python:/Lab-21/myrename.py
+from os import *
+
+print('enter the suffix')
+suffix = input()
+if suffix=='--help':
+    while suffix=='--help':
+        print("myrename [suffix] [prefix] [directory]")
+        print('enter the suffix')
+        suffix = input()
+print('enter the prefix')
+prefix = input()
+print('enter the directory')
+directory = input() 
+
+chdir(directory)
+
+files = listdir()
+
+for file in files:
+    if file.endswith(suffix):
+        new_name = prefix + file
+        rename(file, new_name)
+```
+
 Пункты 1-7 отчета составляются сторого до начала лабораторной работы.
 Допущен к выполнению работы.  
 Подпись преподавателя _____________________

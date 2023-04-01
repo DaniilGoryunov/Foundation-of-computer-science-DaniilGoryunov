@@ -22,7 +22,6 @@ fi
 for file in "$name_dir"/*
 do
     file_name="$(basename "$file")" # полное имя файла
-    echo $file_name
     file_ext="${file_name##*.}" # берем расширение
     new_file_name="$name_dir"/"$prefix""$file_name" # создаем новое имя файла
     if [[ $file_ext == $suffix ]]; then 

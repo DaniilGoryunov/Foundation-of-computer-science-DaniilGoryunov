@@ -114,6 +114,11 @@ admin@MacBook-Pro-Admin лабы % ls tests21
 | 1 | Лекция Бортаковского | 12:00 | 13:00 | Выполнение лабораторной работы | - | - |
 ## 10. Замечания автора по существу работы — Написание команд для отработки навыков работы в ОС UNIX.
 ```
+https://codeforces.com/contest/1809/my
+
+https://codeforces.com/contest/1809/submission/198979821
+
+https://codeforces.com/contest/1809/submission/198790106
 
 ```
 ## 11. Выводы

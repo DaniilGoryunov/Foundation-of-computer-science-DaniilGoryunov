@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "sort.h"
 
-void getLine(char *str, const int size)         // Функция добавления ЗНАЧЕНИЯ элемента в очередь
+void getLine(char *str, const int size)
 {
-    int cnt = 0, ch;                            // Переменная, определяющая число элементов во введенной строке
+    int cnt = 0, ch; 
 
     while ((ch = getchar()) != '\n' && cnt < size - 1)  
         str[cnt++] = ch;                           
@@ -23,13 +23,13 @@ void print_menu(void) {
 
 int main(void)
 {
-    const int N = 10;                            // Размер очереди (число элементов)
-    int action;                                  // Аргумент конечного автомата
-    char tmpCh;                                  // Используется для добавления элемента в очередь
-    Udt udt;                                     // Структура очереди
-    Item item;                                   // Структура элемента очереди
+    const int N = 10;    
+    int action;                                
+    char tmpCh;                               
+    Udt udt;                  
+    Item item;                      
 
-    udtCreate(&udt, N);                          // Функция создания очереди
+    udtCreate(&udt, N);                   
 
     print_menu();
 
@@ -38,21 +38,21 @@ int main(void)
         switch (action) {
             case '1':                               
                 printf("Введите ключ: ");
-                scanf("%d", &item._key);           // Считывание ключа элемента очереди
+                scanf("%d", &item._key);         
                 scanf("%c", &tmpCh);          
                 printf("Введите Строку: ");
-                getLine(item._val, sizeof(item._val));  // Считывание значение элемента (строки) очереди
+                getLine(item._val, sizeof(item._val));  
 
-                if (udtPush(&udt, item))              // Если постановка элемента в очередь прошло успешно, то вывод
+                if (udtPush(&udt, item))              
                     printf("Элемент с ключом %d и строкой '%s' добавлен успешно\n", item.
                     _key, item._val);
                 else
                     printf("Очередь заполнена\n");
                 break;
             case '2':                    
-                if (udtSize(&udt) > 0)          // Проверка, что очередь не пуста
+                if (udtSize(&udt) > 0)       
                 {
-                    item = udtFront(&udt);      // Приравниваем item первый элемент очереди
+                    item = udtFront(&udt);    
 
                     udtPop(&udt);  
 
@@ -64,14 +64,14 @@ int main(void)
                 printf("Размер очереди: %d\n", udtSize(&udt));  
                 break;
             case '4':                            
-                if (udtSize(&udt) > 1) {            // Проверка, что очередь не пуста
+                if (udtSize(&udt) > 1) {        
                     udtSort(&udt);
                 }
                 else
                     printf("В очереди недостаточно элементов для сортировки\n");
                 break;
             case '5':                            
-                if (udtSize(&udt) > 0)          // Проверка, что очередь не пуста
+                if (udtSize(&udt) > 0)          
                 {
                     printf("Очередь:\n");
 
@@ -88,6 +88,6 @@ int main(void)
         }
         print_menu();
     }
-    udtDestroy(&udt);                           // Функция уничтожения ВСЕЙ очереди
+    udtDestroy(&udt);                        
     return 0;
 }

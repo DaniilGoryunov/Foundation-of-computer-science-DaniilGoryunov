@@ -1,42 +1,42 @@
 #include "udt.h"
 
-void udtCreate(Udt *udt, const int size)                            // Функция создания очереди
+void udtCreate(Udt *udt, const int size)                         
 {
-    if (size <= 1)                                                  // Проверка, что формальная очередь не состоит из одного элемента
+    if (size <= 1)                                                  
         return;
 
-    udt->_data = (UDT_TYPE *)malloc(sizeof(UDT_TYPE) * size);       // Выделяем память
-    udt->_first = 0;                                                // Первый элемент очереди равен нулю
-    udt->_size = 0;                                                 // Реальный размер очереди ноль
-    udt->_capacity = size;                                          // Формальный размер очереди (типа 10)
+    udt->_data = (UDT_TYPE *)malloc(sizeof(UDT_TYPE) * size);  
+    udt->_first = 0;                              
+    udt->_size = 0;                                            
+    udt->_capacity = size;                                       
 }
-int udtSize(const Udt *udt)                                         // Функция определения реального размера очереди
+int udtSize(const Udt *udt)                   
 {
-    return udt->_size;                                              // Вывод значения реального размера очереди
-}
-
-int udtCapacity(const Udt *udt)                                     // Функция определения формального размера очереди
-{
-    return udt->_capacity;                                          // Вывод значения формального размера очереди
+    return udt->_size;                                              
 }
 
-int udtEmpty(const Udt *udt)                                        // Проверка пустоты реального размера очереди
+int udtCapacity(const Udt *udt)                               
 {
-    return udt->_size == 0;                                         // Возвращает 1, если размер 0
+    return udt->_capacity;                                   
 }
 
-int udtPush(Udt *udt, const UDT_TYPE value)                         // Операция постановки в очередь
+int udtEmpty(const Udt *udt)                             
 {
-    if (udt->_size == udt->_capacity)                               // Проверка на заполненность очереди
+    return udt->_size == 0;                         
+}
+
+int udtPush(Udt *udt, const UDT_TYPE value)                        
+{
+    if (udt->_size == udt->_capacity)                               
         return 0;
     // В очередь помещается структура с номером и содержимым
-    udt->_data[(udt->_first + udt->_size) % udt->_capacity] = value;// При этом она встает следом за последним элементом
-    udt->_size++;                                                   // Увеличение реального размера очереди
+    udt->_data[(udt->_first + udt->_size) % udt->_capacity] = value;
+    udt->_size++;                                                 
 
     return 1;
 }
 
-UDT_TYPE udtFront(const Udt *udt)                                   // Функция, определяющая первый (самый старый) элемент
+UDT_TYPE udtFront(const Udt *udt)                                   
 {
     return udt->_data[udt->_first];                                 // Возвращает содержимое структуры первого элемента
 }

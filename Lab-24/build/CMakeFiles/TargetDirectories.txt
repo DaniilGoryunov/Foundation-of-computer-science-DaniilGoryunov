@@ -1,0 +1,3 @@
+/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build/CMakeFiles/lab24.dir
+/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build/CMakeFiles/edit_cache.dir
+/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build/CMakeFiles/rebuild_cache.dir

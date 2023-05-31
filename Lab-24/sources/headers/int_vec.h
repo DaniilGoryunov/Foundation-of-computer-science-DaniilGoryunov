@@ -8,7 +8,7 @@ typedef struct {
     int cap;
 } int_vec;
 
-int_vec init();
+int_vec init(void);
 void destroy(int_vec *v);
 bool push_back(int_vec *v, int val);
 bool push_front(int_vec *v, int val);

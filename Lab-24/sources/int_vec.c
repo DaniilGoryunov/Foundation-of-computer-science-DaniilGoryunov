@@ -80,7 +80,7 @@ bool set_size(int_vec *v, int new_size){
     return true;
 }
 
-int_vec init(){
+int_vec init(void){
     int_vec v;
     v.cap = MIN_CAP;
     v.head = 0;

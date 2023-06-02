@@ -9,8 +9,7 @@ void udtSwap(Udt *udt1, Udt *udt2)
     *udt2 = tmp;                                                    
 }
 
-void udtSort(Udt *udt)                                             
-{
+void udtSort(Udt *udt){
     const int cap = udtCapacity(udt);                              
     UDT_TYPE max;                                                   
     Udt second;
@@ -62,3 +61,4 @@ void udtSort(Udt *udt)
     udtDestroy(&second);                    
     udtDestroy(&third);                    
     udtDestroy(&tmp);                     
+}

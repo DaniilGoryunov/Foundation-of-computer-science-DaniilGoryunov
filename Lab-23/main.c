@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "tree.h"
 
-int main(){
+int main(void){
     TreeNode *tree = CreateNode(NULL, 50);
     AddNode(tree, 6);
     AddNode(tree, 57);
@@ -16,6 +16,6 @@ int main(){
     AddNode(tree, 53);
     PrintTree(tree, 0);
     PrintAllTraversal(tree);
-    IsLeafonLevel(tree, 1,MinDepth(tree));
+    printf("%d",getmin(tree));
     return 0;
 }

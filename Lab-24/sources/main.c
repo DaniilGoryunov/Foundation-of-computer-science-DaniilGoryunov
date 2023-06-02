@@ -20,7 +20,7 @@ int_vec postfix (void){
     c = getchar();
     while (c!='\n'){
         if (c == ' '){
-            //нужна обработка двухзначных чисео
+            //нужна обработка двухзначных чисел
             c = getchar();
             continue;
         }

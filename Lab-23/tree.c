@@ -152,15 +152,21 @@ uint MinDepth(TreeNode *root){
     return fmin(l,r) + 1;
 }
 
-void IsLeafonLevel(TreeNode *node, uint current_level, uint finish_level){
+uint getmin(TreeNode *node){
+    uint current_level = 1, finish_level = MinDepth(node);
+    return IsLeafonLevel(node, current_level, finish_level);
+}
+
+uint IsLeafonLevel(TreeNode *node, uint current_level, uint finish_level){
     if (current_level == finish_level){
         if (IsLeaf(node))
-            printf("The value of node with min depth: %f\n", node->data);
+            return node->data;
     }
     else{
-        if (node->left != NULL)
-            IsLeafonLevel(node->left, ++current_level, finish_level);
-        if (node->right !=NULL)
-            IsLeafonLevel(node->right, ++current_level, finish_level);
+        if (node->left != NULL && ((!IsLeaf(node->left) && current_level != finish_level) || (IsLeaf(node->left))))
+            return IsLeafonLevel(node->left, ++current_level, finish_level);
+        if (node->right != NULL && ((!IsLeaf(node->right) && current_level != finish_level) || (IsLeaf(node->right))))
+            return IsLeafonLevel(node->right, ++current_level, finish_level);
     }
+    return 0;
 }

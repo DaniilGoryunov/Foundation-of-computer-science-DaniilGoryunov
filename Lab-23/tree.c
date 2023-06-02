@@ -152,7 +152,7 @@ uint MinDepth(TreeNode *root){
     return fmin(l,r) + 1;
 }
 
-uint getmin(TreeNode *node){
+uint GetMin(TreeNode *node){
     uint current_level = 1, finish_level = MinDepth(node);
     return IsLeafonLevel(node, current_level, finish_level);
 }

@@ -16,6 +16,6 @@ int main(void){
     AddNode(tree, 53);
     PrintTree(tree, 0);
     PrintAllTraversal(tree);
-    printf("%d",getmin(tree));
+    printf("%d",GetMin(tree));
     return 0;
 }

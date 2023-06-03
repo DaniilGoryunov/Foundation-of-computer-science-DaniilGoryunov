@@ -1,73 +1,75 @@
 #include "udt.h"
 
-void udtCreate(Udt *udt, const int size)                         
+void udtCreate(Udt *udt, const int size)                           
 {
-    if (size <= 1)                                                  
+    if (size <= 1)                                                 
         return;
 
-    udt->_data = (UDT_TYPE *)malloc(sizeof(UDT_TYPE) * size);  
-    udt->_first = 0;                              
-    udt->_size = 0;                                            
-    udt->_capacity = size;                                       
+    udt->_data = (UDT_TYPE *)malloc(sizeof(UDT_TYPE) * size);      
+    udt->_first = 0;                                                
+    udt->_size = 0;                                                
+    udt->_capacity = size;                                          
 }
-int udtSize(const Udt *udt)                   
+int udtSize(const Udt *udt)                                         
 {
-    return udt->_size;                                              
-}
-
-int udtCapacity(const Udt *udt)                               
-{
-    return udt->_capacity;                                   
+    return udt->_size;                                            
 }
 
-int udtEmpty(const Udt *udt)                             
+int udtCapacity(const Udt *udt)                                     
 {
-    return udt->_size == 0;                         
+    return udt->_capacity;                                          
 }
 
-int udtPush(Udt *udt, const UDT_TYPE value)                        
+int udtEmpty(const Udt *udt)                                       
 {
-    if (udt->_size == udt->_capacity)                               
+    return udt->_size == 0;                                       
+}
+
+int udtPush(Udt *udt, const UDT_TYPE value)                       
+{
+    if (udt->_size == udt->_capacity)                              
         return 0;
-    // В очередь помещается структура с номером и содержимым
+
     udt->_data[(udt->_first + udt->_size) % udt->_capacity] = value;
-    udt->_size++;                                                 
+    udt->_size++;                                                   
 
     return 1;
 }
 
+
 UDT_TYPE udtFront(const Udt *udt)                                   
 {
-    return udt->_data[udt->_first];                                 // Возвращает содержимое структуры первого элемента
+    return udt->_data[udt->_first];                             
 }
 
-void udtPop(Udt *udt)                                               // Функция извлечения из очереди
+void udtPop(Udt *udt)                                               
 {
-    if (udt->_size == 0)                                            // Проверка на пустоту реальной очереди
+    if (udt->_size == 0)                                            
         return;
 
-    udt->_first = (udt->_first + 1) % udt->_capacity;               // Первый элемент становится следующим за ним с учетом % на длину очереди
-    udt->_size--;                                                   // Число элементов в очереди уменьшается на 1
+    udt->_first = (udt->_first + 1) % udt->_capacity;             
+    udt->_size--;                                                  
 }
 
-void udtPrint(Udt *udt)                                             // Функция печати очереди
-{                                             
-    UDT_TYPE tmp;                                                   // tmp - структура элемента очереди
+void udtPrint(Udt *udt)                                            
+{
+    int i;                                                         
+    UDT_TYPE tmp;                                                  
 
-    for (int i = 0; i < udtSize(udt); i++)                              // Цикл от 0 до реального размера очереди
+    for (i = 0; i < udtSize(udt); i++)                              
     {
-        tmp = udt->_data[(udt->_first + i) % udt->_capacity];       // tmp = 'номер + значение' всех элементов в очереди, начиная с 1
+        tmp = udt->_data[(udt->_first + i) % udt->_capacity];       
         // с учетом % на формальный размер
-        printf("%d %s\n", tmp._key, tmp._val);                     // Вывод номера + значения
+        printf("%d %s\n", tmp._key, tmp._val);                    
     }
 }
 
-void udtDestroy(Udt *udt)                                           // Функция удаления ВСЕЙ очереди
+void udtDestroy(Udt *udt)                                         
 {
-    if (udt->_data == NULL)                                         // Если очередь пуста, то ничего
+    if (udt->_data == NULL)                                       
         return;
 
-    free(udt->_data);                                               // Освобождаем память для структуры - элемента очереди
+    free(udt->_data);                                               
 
-    udt->_data = NULL;                                              // Обнуляем структуру - элемент очереди
+    udt->_data = NULL;                                             
 }

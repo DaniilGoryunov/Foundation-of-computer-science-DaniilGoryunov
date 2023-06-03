@@ -3,7 +3,7 @@
 
 #include "udt.h"
 
-void udtSwap(Udt *udt1, Udt *udt2);		
-void udtSort(Udt *udt);						
+void udtSwap(Udt *udt1, Udt *udt2);			
+void udtSort(Udt *udt);					
 
-#endif //SORT_H
+#endif

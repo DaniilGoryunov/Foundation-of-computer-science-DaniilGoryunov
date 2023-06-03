@@ -15,8 +15,8 @@ TreeNode *SearchNode(TreeNode *root, float data);
 TreeNode *SearchMinNode(TreeNode *root);
 void DeleteNode(TreeNode *root, float data);
 uint MinDepth(TreeNode *root);
-uint IsLeafonLevel(TreeNode *node, uint current_level, uint finish_level);
-uint GetMin(TreeNode *node);
+float IsLeafonLevel(TreeNode *node, uint current_level, uint finish_level);
+float GetMin(TreeNode *node);
 
 struct TreeNode{
     float data;

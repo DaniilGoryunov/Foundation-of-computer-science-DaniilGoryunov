@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <stdbool.h>
+#include <assert.h>
 
 TreeNode *CreateNode(TreeNode * parent, float data){
     TreeNode *new_node = malloc(sizeof(TreeNode));
@@ -152,21 +153,18 @@ uint MinDepth(TreeNode *root){
     return fmin(l,r) + 1;
 }
 
-uint GetMin(TreeNode *node){
+float GetMin(TreeNode *node){
     uint current_level = 1, finish_level = MinDepth(node);
     return IsLeafonLevel(node, current_level, finish_level);
 }
 
-uint IsLeafonLevel(TreeNode *node, uint current_level, uint finish_level){
-    if (current_level == finish_level){
-        if (IsLeaf(node))
-            return node->data;
+float IsLeafonLevel(TreeNode *node, uint current_level, uint finish_level){
+    if (current_level == finish_level && IsLeaf(node))
+        return node->data;
+    else if (node->left != NULL && ((!IsLeaf(node->left) && current_level != finish_level) || (IsLeaf(node->left))))
+       return IsLeafonLevel(node->left, ++current_level, finish_level);
+    else {
+        assert(node->right != NULL && ((!IsLeaf(node->right) && current_level != finish_level) || (IsLeaf(node->right))));
+        return IsLeafonLevel(node->right, ++current_level, finish_level);  
     }
-    else{
-        if (node->left != NULL && ((!IsLeaf(node->left) && current_level != finish_level) || (IsLeaf(node->left))))
-            return IsLeafonLevel(node->left, ++current_level, finish_level);
-        if (node->right != NULL && ((!IsLeaf(node->right) && current_level != finish_level) || (IsLeaf(node->right))))
-            return IsLeafonLevel(node->right, ++current_level, finish_level);
-    }
-    return 0;
 }

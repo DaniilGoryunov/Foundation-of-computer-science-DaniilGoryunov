@@ -325,6 +325,7 @@ The value of node with min depth: 3.000000
 
 ## 10. Замечания автора по существу работы
 [Контест (div 2)](https://codeforces.com/contest/1810/submission/199992435)
+
 [Дорешка](https://codeforces.com/contest/1810/submission/205680689)
 
 ## 11. Выводы

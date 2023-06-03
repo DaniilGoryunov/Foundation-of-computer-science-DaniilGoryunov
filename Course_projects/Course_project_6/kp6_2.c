@@ -11,28 +11,32 @@ char string_to_int(char* str){
     return intic;
 }
 
-bool is_need_to_upgrade(comp c, int n1, int n2){
-    return (c.cores < n1 || c.memory < n2);
+int comps_powerful(comp c){
+    int n = 0;
+    if (c.cores > 4) n++;
+    if (c.memory_size > 256) n++;
+    if (c.memory > 4) n++;
+    if (c.vinchesters > 4) n++;
+    return n;
 }
 
 
 int main(int argc, char* argv[]){
-    if (argc < 2 || argc == 4 || argc == 3 || argc > 6){
+    if (argc!=4){
         fprintf(stderr, "Wrong number of args!\n");
         return 1;
     }
-    char* n1 = "4";
-    char* n2 = "4";
+    int n1;
     FILE* file = fopen(argv[1], "rb");
     if (file == NULL){
         fprintf(stderr, "Can't open file!\n");
         return 1;
     }
-    if (argc > 2){
-        if (strcmp("-p", argv[2]) == 0){
-            n1 = argv[3];
-            n2 = argv[4];
-        }
+    if (strcmp("-p", argv[2]) == 0){
+        n1 = string_to_int(argv[3]);
+    } else{ 
+        fprintf(stderr, "Write -p parameter!\n");
+        return 3;
     }
     int n;
     if (fread(&n, sizeof(int), 1, file) != 1) {
@@ -40,14 +44,28 @@ int main(int argc, char* argv[]){
         return 1;
     }
     comp c;
+    int power[n], min = __INT_MAX__;
     fseek(file, sizeof(int), SEEK_SET);
-    for (int i = 0; i < n - 1; i++) {
+    for (int i = 0; i < n; i++) {
         if (fread(&c, sizeof(comp), 1, file) != 1) {
             fprintf(stderr, "Read elem error!\n");
             return 1;
         }
-        if (is_need_to_upgrade(c, string_to_int(n1), string_to_int(n2)))
-            printf("%s\n", c.surname);
+        power[i] = comps_powerful(c);
+        if (power[i] < min)
+            min = comps_powerful(c);
+    }
+    int cnt = 0;
+    while (n1 > cnt){
+        fseek(file, sizeof(int), SEEK_SET);
+        for (int i = 0; i < n; i++) {
+            fread(&c, sizeof(comp), 1, file);
+            if (power[i] == min) {
+                cnt++;
+                printf("%s ", c.surname);
+            }
+        }
+        min++;
     }
     return 0;
 }

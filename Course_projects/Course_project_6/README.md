@@ -67,56 +67,6 @@ Cтруктуры данных и константы, совместно исп�
 ## 7. Сценарий выполнения работы [план работы, первоначальный текст программы в черновике (можно на отдельном листе) и тесты либо соображения по тестированию]. 
 ```c:/Course_projects/Course_project_6/kp6_1.c
 #include <stdio.h>
-#include <stdlib.h>
-#include "fields.h"
-
-int main(int argc, char* argv[]){
-    if (argc != 3){
-        fprintf(stderr, "Wrong number of args!\n");
-        return 2;
-    }
-    FILE* input = fopen(argv[1], "r");
-    FILE* output = fopen(argv[2], "wb");
-    if (input == NULL){
-        fprintf(stderr, "Can't open input file!\n");
-        return 1;
-    }
-    if (output == NULL){
-        fprintf(stderr, "Can't create output file!\n");
-        return 3;
-    }
-    int chr;
-    do {
-        chr = fgetc(input);
-        if (chr == EOF){
-            fprintf(stderr, "Headers read error!\n");
-            return 4;
-        }
-    } while (chr != '\n');
-    comp c;
-    int counter = 0;
-    fseek(output, sizeof(int), SEEK_SET); // в бинарном файле оставили место для каунтера
-    while (fscanf(input, "%[^;];%[^;];%d;%[^;];%d;%[^;];\n", c.surname, c.proc, &c.cores, c.video_type, &c.memory, c.os_name) == 6){
-        if (fwrite(&c, sizeof(comp), 1, output) != 1){
-            fprintf(stderr, "Write error!\n");
-            return 5;
-        }
-        counter++;
-    }
-    fseek(output, 0, SEEK_SET);     // pointer to top of file
-    if (fwrite(&counter, sizeof(int), 1, output) != 1) {
-        fprintf(stderr, "Write error!\n");
-        return 1;
-    }
-    printf("%d lines are written\n", counter);
-    fclose(input);
-    fclose(output);
-
-    return 0;
-}   
-```
-```c:/Course_projects/Course_project_6/kp6_2.c
-#include <stdio.h>
 #include "fields.h"
 #include <stdbool.h>
 #include <string.h>
@@ -129,28 +79,32 @@ char string_to_int(char* str){
     return intic;
 }
 
-bool is_need_to_upgrade(comp c, int n1, int n2){
-    return (c.cores < n1 || c.memory < n2);
+int comps_powerful(comp c){
+    int n = 0;
+    if (c.cores > 4) n++;
+    if (c.memory_size > 256) n++;
+    if (c.memory > 4) n++;
+    if (c.vinchesters > 4) n++;
+    return n;
 }
 
 
 int main(int argc, char* argv[]){
-    if (argc < 2 || argc == 4 || argc == 3 || argc > 6){
+    if (argc!=4){
         fprintf(stderr, "Wrong number of args!\n");
         return 1;
     }
-    char* n1 = "4";
-    char* n2 = "4";
+    int n1;
     FILE* file = fopen(argv[1], "rb");
     if (file == NULL){
         fprintf(stderr, "Can't open file!\n");
         return 1;
     }
-    if (argc > 2){
-        if (strcmp("-p", argv[2]) == 0){
-            n1 = argv[3];
-            n2 = argv[4];
-        }
+    if (strcmp("-p", argv[2]) == 0){
+        n1 = string_to_int(argv[3]);
+    } else{ 
+        fprintf(stderr, "Write -p parameter!\n");
+        return 3;
     }
     int n;
     if (fread(&n, sizeof(int), 1, file) != 1) {
@@ -158,14 +112,28 @@ int main(int argc, char* argv[]){
         return 1;
     }
     comp c;
+    int power[n], min = __INT_MAX__;
     fseek(file, sizeof(int), SEEK_SET);
-    for (int i = 0; i < n - 1; i++) {
+    for (int i = 0; i < n; i++) {
         if (fread(&c, sizeof(comp), 1, file) != 1) {
             fprintf(stderr, "Read elem error!\n");
             return 1;
         }
-        if (is_need_to_upgrade(c, string_to_int(n1), string_to_int(n2)))
-            printf("%s\n", c.surname);
+        power[i] = comps_powerful(c);
+        if (power[i] < min)
+            min = comps_powerful(c);
+    }
+    int cnt = 0;
+    while (n1 > cnt){
+        fseek(file, sizeof(int), SEEK_SET);
+        for (int i = 0; i < n; i++) {
+            fread(&c, sizeof(comp), 1, file);
+            if (power[i] == min) {
+                cnt++;
+                printf("%s ", c.surname);
+            }
+        }
+        min++;
     }
     return 0;
 }
@@ -175,25 +143,11 @@ int main(int argc, char* argv[]){
 Подпись преподавателя _____________________
 ## 8. Распечатка протокола 
 ```
-admin@MacBook-Pro-2 Course_project_6 % clang -std=c99 -pedantic -Wall kp6_1.c 
-admin@MacBook-Pro-2 Course_project_6 % ./a.out database.txt bin.bin           
-26 lines are written
-admin@MacBook-Pro-2 Course_project_6 % clang -std=c99 -pedantic -Wall kp6_2.c 
-admin@MacBook-Pro-2 Course_project_6 % ./a.out bin.bin -p 3 3                 
-Dautov
-Zhdanov
-Zhuravlyov
-Ivanov
-Karimov
-Kolomytseva
-Larin
-Medvedev
-Nosov
-Postnov
-Saraykin
-Sviridov
-Sedov
-Filatov
+admin@MacBook-Pro-2 Course_project_6 % clang -std=c99 -Wall -pedantic kp6_2.c
+admin@MacBook-Pro-2 Course_project_6 % ./a.out bin.bin -p 1                  
+Larin %                                     
+admin@MacBook-Pro-2 Course_project_6 % ./a.out bin.bin -p 4                  
+Larin Boglaev Volkov Dautov Zhdanov Zhuravlyov Ivanov Kolomytseva Medvedev Nosov Saraykin Sviridov Filatov %       
 ```
 ## 9. Дневник отладки должен содержать дату и время сеансов отладки и основные события (ошибки в сценарии и программе, нестандартные ситуации) и краткие комментарии к ним. В дневнике отладки приводятся сведения об использовании других ЭВМ, существенном участии преподавателя и других лиц в написании и отладке программы.
 

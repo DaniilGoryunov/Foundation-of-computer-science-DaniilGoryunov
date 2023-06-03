@@ -28,7 +28,7 @@ int main(int argc, char* argv[]){
     comp c;
     int counter = 0;
     fseek(output, sizeof(int), SEEK_SET); // в бинарном файле оставили место для каунтера
-    while (fscanf(input, "%[^;];%[^;];%d;%[^;];%d;%[^;];\n", c.surname, c.proc, &c.cores, c.video_type, &c.memory, c.os_name) == 6){
+    while (fscanf(input, "%[^;];%[^;];%d;%d;%[^;];%d;%d;%[^;];\n", c.surname, c.proc, &c.memory_size, &c.cores, c.video_type, &c.memory, &c.vinchesters, c.os_name) == 8){
         if (fwrite(&c, sizeof(comp), 1, output) != 1){
             fprintf(stderr, "Write error!\n");
             return 5;

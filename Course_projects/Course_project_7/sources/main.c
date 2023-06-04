@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <ctype.h>
-#include "headers/dbl_vec.h"
+#include "headers/int_vec.h"
 
 typedef struct {
-    dbl_vec* CIP;   // idx of first el in PI and YE
-    dbl_vec* PI;    // numbers of column
-    dbl_vec* YE;    // numbers
+    int_vec* CIP;   // idx of first el in PI and YE
+    int_vec* PI;    // numbers of column
+    int_vec* YE;    // numbers
     int width;  // number of columns
     int lines; 
 } matrix;
@@ -149,9 +149,9 @@ void divide_column(matrix m, int column, int val) {
 
 int main(){
     matrix m;
-    dbl_vec CIP = init();
-    dbl_vec PI = init();
-    dbl_vec YE = init();
+    int_vec CIP = init();
+    int_vec PI = init();
+    int_vec YE = init();
     m.CIP = &CIP;
     m.PI = &PI;
     m.YE = &YE;

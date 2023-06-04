@@ -1,8 +1,8 @@
 #include <stdlib.h>
-#include "headers/dbl_vec.h"
+#include "headers/int_vec.h"
 #define MIN_CAP 32
 
-static bool increase_buf(dbl_vec *v){
+static bool increase_buf(int_vec *v){
     if (v->size * 2 <= v->cap){
         return true;
     }
@@ -19,7 +19,7 @@ static bool increase_buf(dbl_vec *v){
     return true;
 }
 
-static void decrease_buf(dbl_vec *v){
+static void decrease_buf(int_vec *v){
     if (v->size >= v->cap / 4){
         return;
     }
@@ -48,7 +48,7 @@ static void decrease_buf(dbl_vec *v){
     }
 }
 
-bool set_size(dbl_vec *v, int new_size){
+bool set_size(int_vec *v, int new_size){
     if (new_size <= v->cap){
         v->size = new_size;
         decrease_buf(v);
@@ -80,8 +80,8 @@ bool set_size(dbl_vec *v, int new_size){
     return true;
 }
 
-dbl_vec init(){
-    dbl_vec v;
+int_vec init(){
+    int_vec v;
     v.cap = MIN_CAP;
     v.head = 0;
     v.size = 0;
@@ -89,13 +89,13 @@ dbl_vec init(){
     return v;
 }
 
-void destroy(dbl_vec* v){
+void destroy(int_vec* v){
     v->size = 0;
     v->head = -1;
     free(v->buf);
 }
 
-bool push_back(dbl_vec *v, int val){
+bool push_back(int_vec *v, int val){
     if (!increase_buf(v)){
         return false;
     }
@@ -104,7 +104,7 @@ bool push_back(dbl_vec *v, int val){
     return true;
 }
 
-bool push_front(dbl_vec *v, int val){
+bool push_front(int_vec *v, int val){
     if (!increase_buf(v)){
         return false;
     }
@@ -114,14 +114,14 @@ bool push_front(dbl_vec *v, int val){
     return true;
 }
 
-int pop_back(dbl_vec *v){
+int pop_back(int_vec *v){
     int res = v->buf[(v->head + v->size - 1) % v->cap];
     v->size--;
     decrease_buf(v);
     return res;
 }
 
-int pop_front(dbl_vec *v){
+int pop_front(int_vec *v){
     int res = v->buf[v->head];
     v->size--;
     v->head = (v->head + 1) % v->cap;
@@ -129,18 +129,18 @@ int pop_front(dbl_vec *v){
     return res;
 }
 
-bool is_empty(dbl_vec *v){
+bool is_empty(int_vec *v){
     return v->size == 0;
 }
 
-int get_size(dbl_vec *v){
+int get_size(int_vec *v){
     return v->size;
 }
 
-int get_el(dbl_vec *v, int idx){
+int get_el(int_vec *v, int idx){
     return v->buf[(v->head + idx) % v->cap];
 }
 
-void set_el(dbl_vec *v, int idx, int val){
+void set_el(int_vec *v, int idx, int val){
     v->buf[(v->head + idx) % v->cap] = val;
 }

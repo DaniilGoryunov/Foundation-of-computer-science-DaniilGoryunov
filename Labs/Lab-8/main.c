@@ -31,28 +31,3 @@ int main(){
     printf("%d\n", fibo(k));
     return 0;
 }
-/*
- 
- int matrix[2][2],matrixxx[2][2],matrixx[2][2];
- matrixxx[0][0]=1;
- matrixxx[1][0]=1;
- matrixxx[1][0]=1;
- matrixxx[0][1]=1;
- matrixxx[1][1]=0;
- matrixx[0][0]=1;
- matrixx[1][0]=1;
- matrixx[0][1]=1;
- matrixx[1][1]=0;
- for (int i=3;i<exp;i++){
-     matrix[0][0]=(matrixxx[0][0]*matrixx[0][0]+matrixxx[1][0]*matrixx[0][1]);
-     matrix[0][1]=(matrixxx[0][0]*matrixx[0][1]+matrixxx[0][1]*matrixx[1][1]);
-     matrix[1][0]=(matrixxx[1][0]*matrixx[0][0]+matrixxx[1][1]*matrixx[1][0]);
-     matrix[1][1]=(matrixxx[1][0]*matrixx[0][1]+matrixxx[1][1]*matrixx[1][1]);
-     matrixxx[0][0]=matrix[0][0];
-     matrixxx[1][0]=matrix[1][0];
-     matrixxx[0][1]=matrix[0][1];
-     matrixxx[1][1]=matrix[1][1];
- }
- printf("%d\n",matrix[0][0]);
-
- */

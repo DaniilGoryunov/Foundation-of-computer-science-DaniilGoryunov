@@ -19,6 +19,7 @@ int main(int argc, char* argv[]){
     }
     char line[99];
     int counter = 0, key;
+    fseek(output2, sizeof(int), SEEK_SET);
     while (fscanf(input, "%[^;];%d\n", line, &key) == 2){
         if (fwrite(line, sizeof(line), 1, output1) != 1){
             fprintf(stderr, "Write error in 1st file!\n");
@@ -29,6 +30,11 @@ int main(int argc, char* argv[]){
             return 5;
         }
         counter++;
+    }
+    fseek(output2, 0, SEEK_SET);     // pointer to top of file
+    if (fwrite(&counter, sizeof(int), 1, output2) != 1) {
+        fprintf(stderr, "Write error!\n");
+        return 1;
     }
     printf("%d lines are written\n", counter);
     fclose(input);

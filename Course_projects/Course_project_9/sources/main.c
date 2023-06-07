@@ -77,6 +77,17 @@ int main(int argc, char* argv[]){
     int key[n];
     if(!read_keys(keys, n, key))
         fprintf(stderr, "Read keys error");
+    // for (int i = 0; i < n; i++){
+    //     printf("%d\n",key[i]);
+    // }
     shekerSort(key, n, ascii);
+    // for (int i = 0; i < n; i++){
+    //     printf("%d\n",key[i]);
+    // }
+    // char* ascii_itog[99];
+    // for (int i = 0; i < n; i++){
+    //     fread(ascii_itog, sizeof(char[99]), 1, ascii);
+    //     printf("%s",ascii_itog);
+    // }
     return 0;
 }

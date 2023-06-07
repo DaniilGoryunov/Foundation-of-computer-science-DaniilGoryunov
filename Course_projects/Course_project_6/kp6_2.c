@@ -65,5 +65,6 @@ int main(int argc, char* argv[]){
         }
         min++;
     }
+    fclose(file);
     return 0;
 }

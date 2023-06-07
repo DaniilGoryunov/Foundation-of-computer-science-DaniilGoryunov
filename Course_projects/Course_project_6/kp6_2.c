@@ -20,7 +20,6 @@ int comps_powerful(comp c){
     return n;
 }
 
-
 int main(int argc, char* argv[]){
     if (argc!=4){
         fprintf(stderr, "Wrong number of args!\n");
@@ -45,7 +44,6 @@ int main(int argc, char* argv[]){
     }
     comp c;
     int power[n], min = __INT_MAX__;
-    fseek(file, sizeof(int), SEEK_SET);
     for (int i = 0; i < n; i++) {
         if (fread(&c, sizeof(comp), 1, file) != 1) {
             fprintf(stderr, "Read elem error!\n");

@@ -43,6 +43,5 @@ int main(int argc, char* argv[]){
     printf("%d lines are written\n", counter);
     fclose(input);
     fclose(output);
-
     return 0;
 }   

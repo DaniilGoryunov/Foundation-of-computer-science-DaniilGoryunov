@@ -25,24 +25,6 @@ bool read_art(FILE* f, int n, map* m) {
     return true;
 }
 
-void shell_sort(int n, map* m) {
-    int i, j, step;
-    map tmp;
-    for (step = n / 2; step > 0; step /= 2) {
-        for (i = step; i < n; i++) {
-            tmp = m[i];
-            for (j = i; j >= step; j -= step) {
-                if (keycmp(tmp.k, m[j - step].k) < 0) {
-                    m[j] = m[j - step];
-                } else {
-                    break;
-                }
-            }
-            m[j] = tmp;
-        }
-    }
-}
-
 void cocktail_sort(int table_size, map* m){
     int left_border = 0, right_border = table_size - 1;
     map tmp;

@@ -54,10 +54,10 @@ RM = /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24
+CMAKE_SOURCE_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build
+CMAKE_BINARY_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/lab24.dir/clean
 CMakeFiles/lab24.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build/CMakeFiles --progress-num=1,2,3 "Built target lab24"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target lab24"
 .PHONY : CMakeFiles/lab24.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/lab24.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/lab24.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build/CMakeFiles 0
 .PHONY : CMakeFiles/lab24.dir/rule
 
 # Convenience name for target.

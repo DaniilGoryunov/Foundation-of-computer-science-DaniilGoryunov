@@ -57,10 +57,10 @@ RM = /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24
+CMAKE_SOURCE_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build
+CMAKE_BINARY_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build/CMakeFiles /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build/CMakeFiles /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,30 +129,6 @@ lab24/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/build
 .PHONY : lab24/fast
 
-sources/int_vec.o: sources/int_vec.c.o
-.PHONY : sources/int_vec.o
-
-# target to build an object file
-sources/int_vec.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/sources/int_vec.c.o
-.PHONY : sources/int_vec.c.o
-
-sources/int_vec.i: sources/int_vec.c.i
-.PHONY : sources/int_vec.i
-
-# target to preprocess a source file
-sources/int_vec.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/sources/int_vec.c.i
-.PHONY : sources/int_vec.c.i
-
-sources/int_vec.s: sources/int_vec.c.s
-.PHONY : sources/int_vec.s
-
-# target to generate assembly for a file
-sources/int_vec.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/sources/int_vec.c.s
-.PHONY : sources/int_vec.c.s
-
 sources/main.o: sources/main.c.o
 .PHONY : sources/main.o
 
@@ -177,6 +153,78 @@ sources/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/sources/main.c.s
 .PHONY : sources/main.c.s
 
+sources/token_vec.o: sources/token_vec.c.o
+.PHONY : sources/token_vec.o
+
+# target to build an object file
+sources/token_vec.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/sources/token_vec.c.o
+.PHONY : sources/token_vec.c.o
+
+sources/token_vec.i: sources/token_vec.c.i
+.PHONY : sources/token_vec.i
+
+# target to preprocess a source file
+sources/token_vec.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/sources/token_vec.c.i
+.PHONY : sources/token_vec.c.i
+
+sources/token_vec.s: sources/token_vec.c.s
+.PHONY : sources/token_vec.s
+
+# target to generate assembly for a file
+sources/token_vec.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/sources/token_vec.c.s
+.PHONY : sources/token_vec.c.s
+
+sources/tree.o: sources/tree.c.o
+.PHONY : sources/tree.o
+
+# target to build an object file
+sources/tree.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/sources/tree.c.o
+.PHONY : sources/tree.c.o
+
+sources/tree.i: sources/tree.c.i
+.PHONY : sources/tree.i
+
+# target to preprocess a source file
+sources/tree.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/sources/tree.c.i
+.PHONY : sources/tree.c.i
+
+sources/tree.s: sources/tree.c.s
+.PHONY : sources/tree.s
+
+# target to generate assembly for a file
+sources/tree.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/sources/tree.c.s
+.PHONY : sources/tree.c.s
+
+sources/tree_stack.o: sources/tree_stack.c.o
+.PHONY : sources/tree_stack.o
+
+# target to build an object file
+sources/tree_stack.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/sources/tree_stack.c.o
+.PHONY : sources/tree_stack.c.o
+
+sources/tree_stack.i: sources/tree_stack.c.i
+.PHONY : sources/tree_stack.i
+
+# target to preprocess a source file
+sources/tree_stack.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/sources/tree_stack.c.i
+.PHONY : sources/tree_stack.c.i
+
+sources/tree_stack.s: sources/tree_stack.c.s
+.PHONY : sources/tree_stack.s
+
+# target to generate assembly for a file
+sources/tree_stack.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab24.dir/build.make CMakeFiles/lab24.dir/sources/tree_stack.c.s
+.PHONY : sources/tree_stack.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +234,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... lab24"
-	@echo "... sources/int_vec.o"
-	@echo "... sources/int_vec.i"
-	@echo "... sources/int_vec.s"
 	@echo "... sources/main.o"
 	@echo "... sources/main.i"
 	@echo "... sources/main.s"
+	@echo "... sources/token_vec.o"
+	@echo "... sources/token_vec.i"
+	@echo "... sources/token_vec.s"
+	@echo "... sources/tree.o"
+	@echo "... sources/tree.i"
+	@echo "... sources/tree.s"
+	@echo "... sources/tree_stack.o"
+	@echo "... sources/tree_stack.i"
+	@echo "... sources/tree_stack.s"
 .PHONY : help
 
 

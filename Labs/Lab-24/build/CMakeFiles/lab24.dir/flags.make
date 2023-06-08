@@ -6,7 +6,7 @@ C_DEFINES =
 
 C_INCLUDES = 
 
-C_FLAGSarm64 =  -std=c99 -pedantic -Wall -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
+C_FLAGSarm64 =  -pedantic -std=c99 -Wall -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
 
-C_FLAGS =  -std=c99 -pedantic -Wall -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
+C_FLAGS =  -pedantic -std=c99 -Wall -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
 

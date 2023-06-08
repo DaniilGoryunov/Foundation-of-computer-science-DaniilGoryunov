@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24
+CMAKE_SOURCE_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build
+CMAKE_BINARY_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/lab24.dir/depend.make
@@ -70,46 +70,78 @@ include CMakeFiles/lab24.dir/progress.make
 include CMakeFiles/lab24.dir/flags.make
 
 CMakeFiles/lab24.dir/sources/main.c.o: CMakeFiles/lab24.dir/flags.make
-CMakeFiles/lab24.dir/sources/main.c.o: /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/sources/main.c
+CMakeFiles/lab24.dir/sources/main.c.o: /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/main.c
 CMakeFiles/lab24.dir/sources/main.c.o: CMakeFiles/lab24.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lab24.dir/sources/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab24.dir/sources/main.c.o -MF CMakeFiles/lab24.dir/sources/main.c.o.d -o CMakeFiles/lab24.dir/sources/main.c.o -c /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/sources/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lab24.dir/sources/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab24.dir/sources/main.c.o -MF CMakeFiles/lab24.dir/sources/main.c.o.d -o CMakeFiles/lab24.dir/sources/main.c.o -c /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/main.c
 
 CMakeFiles/lab24.dir/sources/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lab24.dir/sources/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/sources/main.c > CMakeFiles/lab24.dir/sources/main.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/main.c > CMakeFiles/lab24.dir/sources/main.c.i
 
 CMakeFiles/lab24.dir/sources/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lab24.dir/sources/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/sources/main.c -o CMakeFiles/lab24.dir/sources/main.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/main.c -o CMakeFiles/lab24.dir/sources/main.c.s
 
-CMakeFiles/lab24.dir/sources/int_vec.c.o: CMakeFiles/lab24.dir/flags.make
-CMakeFiles/lab24.dir/sources/int_vec.c.o: /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/sources/int_vec.c
-CMakeFiles/lab24.dir/sources/int_vec.c.o: CMakeFiles/lab24.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lab24.dir/sources/int_vec.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab24.dir/sources/int_vec.c.o -MF CMakeFiles/lab24.dir/sources/int_vec.c.o.d -o CMakeFiles/lab24.dir/sources/int_vec.c.o -c /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/sources/int_vec.c
+CMakeFiles/lab24.dir/sources/tree.c.o: CMakeFiles/lab24.dir/flags.make
+CMakeFiles/lab24.dir/sources/tree.c.o: /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/tree.c
+CMakeFiles/lab24.dir/sources/tree.c.o: CMakeFiles/lab24.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lab24.dir/sources/tree.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab24.dir/sources/tree.c.o -MF CMakeFiles/lab24.dir/sources/tree.c.o.d -o CMakeFiles/lab24.dir/sources/tree.c.o -c /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/tree.c
 
-CMakeFiles/lab24.dir/sources/int_vec.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lab24.dir/sources/int_vec.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/sources/int_vec.c > CMakeFiles/lab24.dir/sources/int_vec.c.i
+CMakeFiles/lab24.dir/sources/tree.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lab24.dir/sources/tree.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/tree.c > CMakeFiles/lab24.dir/sources/tree.c.i
 
-CMakeFiles/lab24.dir/sources/int_vec.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lab24.dir/sources/int_vec.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/sources/int_vec.c -o CMakeFiles/lab24.dir/sources/int_vec.c.s
+CMakeFiles/lab24.dir/sources/tree.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lab24.dir/sources/tree.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/tree.c -o CMakeFiles/lab24.dir/sources/tree.c.s
+
+CMakeFiles/lab24.dir/sources/token_vec.c.o: CMakeFiles/lab24.dir/flags.make
+CMakeFiles/lab24.dir/sources/token_vec.c.o: /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/token_vec.c
+CMakeFiles/lab24.dir/sources/token_vec.c.o: CMakeFiles/lab24.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lab24.dir/sources/token_vec.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab24.dir/sources/token_vec.c.o -MF CMakeFiles/lab24.dir/sources/token_vec.c.o.d -o CMakeFiles/lab24.dir/sources/token_vec.c.o -c /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/token_vec.c
+
+CMakeFiles/lab24.dir/sources/token_vec.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lab24.dir/sources/token_vec.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/token_vec.c > CMakeFiles/lab24.dir/sources/token_vec.c.i
+
+CMakeFiles/lab24.dir/sources/token_vec.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lab24.dir/sources/token_vec.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/token_vec.c -o CMakeFiles/lab24.dir/sources/token_vec.c.s
+
+CMakeFiles/lab24.dir/sources/tree_stack.c.o: CMakeFiles/lab24.dir/flags.make
+CMakeFiles/lab24.dir/sources/tree_stack.c.o: /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/tree_stack.c
+CMakeFiles/lab24.dir/sources/tree_stack.c.o: CMakeFiles/lab24.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/lab24.dir/sources/tree_stack.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab24.dir/sources/tree_stack.c.o -MF CMakeFiles/lab24.dir/sources/tree_stack.c.o.d -o CMakeFiles/lab24.dir/sources/tree_stack.c.o -c /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/tree_stack.c
+
+CMakeFiles/lab24.dir/sources/tree_stack.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lab24.dir/sources/tree_stack.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/tree_stack.c > CMakeFiles/lab24.dir/sources/tree_stack.c.i
+
+CMakeFiles/lab24.dir/sources/tree_stack.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lab24.dir/sources/tree_stack.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/sources/tree_stack.c -o CMakeFiles/lab24.dir/sources/tree_stack.c.s
 
 # Object files for target lab24
 lab24_OBJECTS = \
 "CMakeFiles/lab24.dir/sources/main.c.o" \
-"CMakeFiles/lab24.dir/sources/int_vec.c.o"
+"CMakeFiles/lab24.dir/sources/tree.c.o" \
+"CMakeFiles/lab24.dir/sources/token_vec.c.o" \
+"CMakeFiles/lab24.dir/sources/tree_stack.c.o"
 
 # External object files for target lab24
 lab24_EXTERNAL_OBJECTS =
 
 lab24: CMakeFiles/lab24.dir/sources/main.c.o
-lab24: CMakeFiles/lab24.dir/sources/int_vec.c.o
+lab24: CMakeFiles/lab24.dir/sources/tree.c.o
+lab24: CMakeFiles/lab24.dir/sources/token_vec.c.o
+lab24: CMakeFiles/lab24.dir/sources/tree_stack.c.o
 lab24: CMakeFiles/lab24.dir/build.make
 lab24: CMakeFiles/lab24.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable lab24"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable lab24"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lab24.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -121,6 +153,6 @@ CMakeFiles/lab24.dir/clean:
 .PHONY : CMakeFiles/lab24.dir/clean
 
 CMakeFiles/lab24.dir/depend:
-	cd /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24 /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24 /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Lab-24/build/CMakeFiles/lab24.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24 /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24 /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Labs/Lab-24/build/CMakeFiles/lab24.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/lab24.dir/depend
 

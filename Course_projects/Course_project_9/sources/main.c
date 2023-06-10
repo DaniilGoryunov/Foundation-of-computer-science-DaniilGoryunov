@@ -1,3 +1,4 @@
+//шейкер сортировка; ключ - смешанный; хранятся отдельно
 #include "headers/key.h"
 #include <stdbool.h>
 #include <stdio.h>
@@ -48,13 +49,13 @@ void cocktail_sort(int table_size, map* m){
     }
 }
 
-void _print_art(FILE* art) {
-    fseek(art, 0, SEEK_SET);
-    char line[99];
-    while (fread(line, sizeof(line), 1, art) == 1) {
-        printf("%s\n", line);
-    }
-}
+// void _print_art(FILE* art) {
+//     fseek(art, 0, SEEK_SET);
+//     char line[99];
+//     while (fread(line, sizeof(line), 1, art) == 1) {
+//         printf("%s\n", line);
+//     }
+// }
 
 void print_art(int n, map* m) {
     for (int i = 0; i < n; i++) {
@@ -78,7 +79,7 @@ int binary_search(key k, int n, map* m) {
         } else {
             high = mid - 1;
         }
-        mid = (low + high) / 2;
+        mid = low + (high - low) / 2;
     }
     if (low > high) {
         return -1;

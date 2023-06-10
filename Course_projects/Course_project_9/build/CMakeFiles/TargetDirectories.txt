@@ -1,3 +1,0 @@
-/Users/admin/Desktop/МАИ/первый/лабы/kp9/build/CMakeFiles/kp9.dir
-/Users/admin/Desktop/МАИ/первый/лабы/kp9/build/CMakeFiles/edit_cache.dir
-/Users/admin/Desktop/МАИ/первый/лабы/kp9/build/CMakeFiles/rebuild_cache.dir

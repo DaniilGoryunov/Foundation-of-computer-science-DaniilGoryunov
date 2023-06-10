@@ -16,24 +16,18 @@
 
 
 ## 1. Тема
-Разреженные матрицы
+Сортировка и поиск
 ## 2. Цель работы
-Составить программу на языке Си с процедурами и/или функциями для обработки прямоугольных разреженных матриц с
-элементами целого (группы 6, 8), вещественного (группы 2-5), или комплексного (группы 1, 7) типов, которая:
-1. вводит матрицы различного размера, представленные во входном текстовом файле в обычном формате (по строкам),
-с одновременным размещением ненулевых элементов в разреженной матрице в соответствии с заданной схемой;
-2. печатает введенные матрицы во внутреннем представлении согласно заданной схеме размещения и в обычном
-(естественном) виде;
-3. выполняет необходимые преобразования разреженных матриц (или вычисления над ними) путем обращения к
-соответствующим процедурам и/или функциям;
-4. печатает результат преобразования (вычисления) согласно заданной схеме размещения и в обычном виде.
+Составить программу на языке Си с использованием процедур и функций для сортировки таблицы заданным методом и двоичного поиска по ключу в таблице
 ## 3. Задание
-Реализовать хранение разряженной матрицы на 3 векторах
+Программа должна вводить значения элементов неупорядоченной таблицы и проверять работу процедуры сортировки в трех случаях: (1) элементы таблицы с самого начала упорядочены; (2) элементы таблицы расставлены в обратном порядке; (3) элементы таблицы не упорядочены. В последнем случае можно использовать встроенные процедуры генерации псевдослучайных чисел
 
-**Действие**
+Для каждого вызова процедуры сортировки необходимо печатать исходное состояние таблицы и результаты сортировки. После выполнения сортировки программа должна вводить ключи и для каждого из них выполнять поиск в упорядоченной таблице с помощью процедуры двоичного поиска и печатать найденные элементы, если они присутствуют в таблице.
+В процессе отладки и тестирования рекомендуется использовать команды обработки текстовых файлов ОС UNIX и переадресацию ввода-вывода. Тестовые данные необходимо заранее поместить в текстовые файлы. В качестве текста для записей таблицы взять изображение ASCII-графики. Каждый элемент таблицы, содержащий ключ и текст записи, распечатывать в отдельной строке
 
-Определить максимальный по модулю элемент матрицы и разделить на него все элементы столбца, в котором он находится. Если таких элементов несколько, обработать предпоследний столбец, содержащий такой элемент.
+Метод сортировки: Шейкер сортировка
 
+Структура таблицы: тип ключа - смешанный (9 байт), хранение ключа и данных - отдельно, минимальное число элементов таблицы - 13
 ## 4. Оборудование:
 Процессор: Apple M1
 
@@ -47,236 +41,249 @@
 
 Система программирования: VS code
 ## 6. Идея, метод, алгоритм решения задачи (в формах: словесной, псевдокода, графической [блок-схема, диаграмма, рисунок, таблица] или формальные спецификации с пред- и постусловиями)
-![Идея](asset.png)
+
 ## 7. Сценарий выполнения работы [план работы, первоначальный текст программы в черновике (можно на отдельном листе) и тесты либо соображения по тестированию]. 
-```c:/Course_projects/Course_project_7/main.c
+```c:/Course_projects/Course_project_8/main.c
+//шейкер сортировка; ключ - смешанный; хранятся отдельно
+#include "headers/key.h"
+#include <stdbool.h>
 #include <stdio.h>
-#include <ctype.h>
-#include "headers/dbl_vec.h"
 
 typedef struct {
-    dbl_vec* CIP;   // idx of first el in PI and YE
-    dbl_vec* PI;    // numbers of column
-    dbl_vec* YE;    // numbers
-    int width;  // number of columns
-    int lines; 
-} matrix;
+    key k;
+    char val[99];
+} map;
 
-void input_matr(matrix* m){
-    m->width = 0;
-    m->lines = 0;
-    int c = getchar();
-    int num = 0, column = 0, not_zeros = 0;
-    bool is_negative = false;
-    while (c != EOF){
-        if (c == ' '){
-            if (num != 0){
-                if (is_negative) {
-                    num *= -1;
-                }
-                push_back(m->YE, num);
-                push_back(m->PI, column);
-                not_zeros++;
+bool read_keys(FILE* f, int n, map* m) {
+    for (int i = 0; i < n; i++) {
+        if (fread(&m[i].k, sizeof(key), 1, f) != 1) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool read_art(FILE* f, int n, map* m) {
+    for (int i = 0; i < n; i++) {
+        if (fread(&m[i].val, sizeof(char[99]), 1, f) != 1) {
+            return false;
+        }
+    }
+    return true;
+}
+
+void cocktail_sort(int table_size, map* m){
+    int left_border = 0, right_border = table_size - 1;
+    map tmp;
+    while(left_border <= right_border){
+        for (int i = left_border; i < right_border; ++i){
+            if (keycmp(m[i].k, m[i + 1].k) > 0){
+                tmp = m[i];
+                m[i] = m[i + 1];
+                m[i + 1] = tmp;
             }
-            // как-то надо определить первый элекмент в линии: длина всего вектора PI - количество элементов в текущей строке
-            column++;
-            num = 0;
-            is_negative = false;
-        } else if (c == '\n' || c == EOF) {
-            if (num != 0){
-                if (is_negative) {
-                    num *= -1;
-                }
-                push_back(m->YE, num);
-                push_back(m->PI, column);
-                not_zeros++;
+        }
+        --right_border;
+        for (int i = right_border; i > left_border; --i){
+            if (keycmp(m[i].k, m[i - 1].k) < 0){
+                tmp = m[i];
+                m[i] = m[i - 1];
+                m[i - 1] = tmp;
             }
-            push_back(m->CIP, get_size(m->PI) - not_zeros);
-            not_zeros = 0;
-            column++;
-            if (column > m->width) {
-                m->width = column;
-            }
-            column = 0;
-            num = 0;
-            is_negative = false;
-            m->lines++;
-        } else if (c == '-') {
-            is_negative = true;
-        } else if (!isdigit(c)){
-            fprintf(stderr, "Not number was inputed!\n");
-            m->width = -1;
-            return;
+        }
+        ++left_border;
+    }
+}
+
+void print_art(int n, map* m) {
+    for (int i = 0; i < n; i++) {
+        printf("%d%c ", m[i].k.num, m[i].k.letter);
+        printf("%s\n", m[i].val);
+    }
+}
+
+key get_key() {
+    key k;
+    scanf("%d%c", &k.num, &k.letter);
+    return k;
+}
+
+int binary_search(key k, int n, map* m) {
+    int mid = n / 2;
+    int low = 0, high = n - 1;
+    while (keycmp(m[mid].k, k) != 0 && low <= high) {
+        if (keycmp(k, m[mid].k) > 0) {
+            low = mid + 1;
         } else {
-            num *= 10;
-            num += c - '0';
+            high = mid - 1;
         }
-        c = getchar();
+        mid = low + (high - low) / 2;
+    }
+    if (low > high) {
+        return -1;
+    } else {
+        return mid;
     }
 }
 
-void print_zeros(int n){
-    if (n == 0){
-        return;
-    }
-    for (int i = 0; i < n; i++){
-        printf("0 ");
-    }
-}
-
-void print_matr(matrix m){
-    int idx_line = 0, column = 0;
-    for (int i = 0; i < get_size(m.PI); i++){
-        // printf("    DEBUG: i = %d  idx_line = %d    ", i, idx_line);
-        if (i == get_el(m.CIP, idx_line)){
-            if (column != m.width && i != 0){
-                print_zeros(m.width - column);
-            }
-            printf("\n");
-            idx_line++;
-            if (get_el(m.CIP, idx_line - 1) == get_el(m.CIP, idx_line)) {
-                print_zeros(m.width);
-                printf("\n");
-                idx_line++;
-            }
-            column = 0;
-        } 
-        if (get_el(m.PI, i) > column) {
-            print_zeros(get_el(m.PI, i) - column);
-            column = get_el(m.PI, i);
-        }
-        printf("%d ", get_el(m.YE, i));
-        column++;
-    }
-    print_zeros(m.width - column);
-    printf("\n");
-    for (int i = 0; i < m.lines - idx_line; i++) {
-        print_zeros(m.width);
-        printf("\n");
-    }
-    printf("\n");
-    // printf("width: %d\n", width);
-}
-
-int abs(int a) {
-    if (a < 0) {
-        return -a;
-    }
-    return a;
-}
-
-// return el's idx in PI or YE
-int abs_max(matrix m) {
-    int max = 0, idx_max, preidx_max;
-    bool is_same_exist = false;
-    for (int i = 0; i < get_size(m.YE); i++) {
-        if (abs(get_el(m.YE, i)) > max) {
-            max = abs(get_el(m.YE, i));
-            idx_max = i;
-            is_same_exist = false;
-        } else if (abs(get_el(m.YE, i)) == max) {
-            if (get_el(m.PI, i) > get_el(m.PI, idx_max)) {
-                preidx_max = idx_max;
-            } else {
-                preidx_max = i;
-            }
-            idx_max = i;
-            is_same_exist = true;
-        }
-    }
-    if (is_same_exist) {
-        return preidx_max;
-    }
-    return idx_max;
-}
-
-void divide_column(matrix m, int column, int val) {
-    for (int i = 0; i < get_size(m.PI); i++) {
-        if (get_el(m.PI, i) == column) {
-            set_el(m.YE, i, get_el(m.YE, i) / val);
-        }
-    }
-}
-
-
-int main(){
-    matrix m;
-    dbl_vec CIP = init();
-    dbl_vec PI = init();
-    dbl_vec YE = init();
-    m.CIP = &CIP;
-    m.PI = &PI;
-    m.YE = &YE;
-    input_matr(&m);
-    if (m.width == -1){
+int main(int argc, char* argv[]) {
+    if (argc != 3){
+        fprintf(stderr, "Wrong number of args!\n");
         return 1;
     }
-    printf("CIP:\n");
-    for (int i = 0; i < get_size(m.CIP); i++){
-        printf("%d\n", get_el(&CIP, i));
+    FILE* art = fopen(argv[1], "rb");
+    if (art == NULL) {
+        fprintf(stderr, "Can't open the second file!");
+        return 2;
     }
-    printf("PI:\n");
-    for (int i = 0; i < get_size(m.PI); i++){
-        printf("%d\n", get_el(&PI, i));
+    FILE* keys = fopen(argv[2], "rb");
+    if (keys == NULL) {
+        fprintf(stderr, "Can't open the first file!");
+        return 2;
     }
-    printf("YE:\n");
-    for (int i = 0; i < get_size(m.YE); i++){
-        printf("%d\n", get_el(&YE, i));
+    int n;
+    if (fread(&n, sizeof(int), 1, keys) != 1) {
+        fprintf(stderr, "Read number of elems error!\n");
+        return 3;
     }
-
-    printf("Matrix:\n");
-    print_matr(m);
+    map m[n];
+    if (!read_keys(keys, n, m)) {
+        fprintf(stderr, "Read elems error!\n");
+        return 4;
+    }
+    if (!read_art(art, n, m)) {
+        fprintf(stderr, "Read elems error!\n");
+        return 4;
+    }
+    fclose(keys);
+    fclose(art);
+    print_art(n, m);
+    cocktail_sort(n, m);
     printf("\n");
-    int idx_max = abs_max(m);
-    int max_column = get_el(m.PI, idx_max);
-    divide_column(m, max_column, get_el(m.YE, idx_max));
-    printf("Divided matrix:\n");
-    print_matr(m);
-    
-    destroy(m.CIP);
-    destroy(m.PI);
-    destroy(m.YE);
+    print_art(n, m);
+    while (true) {
+        printf("Enter key:\n");
+        key user = get_key();
+        int idx = binary_search(user, n, m);
+        if (idx < 0) {
+            printf("Key not found!\n");
+        } else {
+            printf("%s\n", m[idx].val);
+        }
+    }
 
     return 0;
 }
-
 ```
 Пункты 1-7 отчета составляются сторого до начала лабораторной работы.
 Допущен к выполнению работы.  
 Подпись преподавателя _____________________
 ## 8. Распечатка протокола 
 ```
-admin@MacBook-Pro-2 Course_project_6 % clang -std=c99 -pedantic -Wall kp6_1.c 
-admin@MacBook-Pro-2 Course_project_6 % ./a.out database.txt bin.bin           
-26 lines are written
-admin@MacBook-Pro-2 Course_project_6 % clang -std=c99 -pedantic -Wall kp6_2.c 
-admin@MacBook-Pro-2 Course_project_6 % ./a.out bin.bin -p 3 3                 
-Dautov
-Zhdanov
-Zhuravlyov
-Ivanov
-Karimov
-Kolomytseva
-Larin
-Medvedev
-Nosov
-Postnov
-Saraykin
-Sviridov
-Sedov
-Filatov
+admin@MacBook-Pro-2 sources % ./kp9 ascii_shaked.bin keys_shaked.bin
+18C          :                  `"--'             |    `-.     \
+13B ".                                       d$"             _.'  |
+23C :    `-  ...........,                   | /  .'
+16A .'|$u$$|          |$$,$$|           |  <            _.-'
+26B |         ``:::::::'       .            |<    `.
+17B | `:$$:'          :$$$$$:           `.  `.       .-'
+23B /`-.                                  `.  /   /
+11B "$$b        `--.                          ___.---uuudP
+13A "$b          -'            `-.-'            $$$"              .'|
+13C `.   /                              ..."             .'     |
+38C |     .:::::::::::`.         /
+19B :##.       ==             .###.       `.      `.    `\
+13D `./                           ..::-'            _.'       |
+30C `.  .'                   :    /:'       |-'MMMM.-'
+14A /                         .:::-'            .-'         .'
+23A \                                xXXX'|    /   ./
+42B `',:                 :    .'
+14B :                          ::''\          _.'            |
+27C |             ```          |           x| \ `.:``.
+32B |  |                   .'   /'        .'MMM.-'
+20B |##:                      :###:        |        >     >
+35B |                     `'            |tbap\
+22C \                                   xXX|     /    ./
+10A quu..__
+36A \                                  :MM.-'
+38A \.               `.            /
+21A |#'     `..'`..'          `###'        x:      /     /
+15A : /'$$|           .@"$\           `.   .'              _.-'
+38B /     .:::::::.. :           /
+41A /   .''               >::'  /
+42C `:.:' 
+30A |                         .'    /'   xXX|  `:`M`M':.
+12A `$$b           `.__.------.__     __.---'      $$$$"              .
+11A $$$b  `---.__
+40A |   .:::------------\       /
+30B |    |                    ;    /:' xXXX'|  -'MMMMM:'
+14C .' .-.             .-.           `.      .'               |
+37A \                 |              .''
+35A `'`'                   :  ,'          |MMM<
+
+10A quu..__
+11A $$$b  `---.__
+11B "$$b        `--.                          ___.---uuudP
+12A `$$b           `.__.------.__     __.---'      $$$$"              .
+13A "$b          -'            `-.-'            $$$"              .'|
+13B ".                                       d$"             _.'  |
+13C `.   /                              ..."             .'     |
+13D `./                           ..::-'            _.'       |
+14A /                         .:::-'            .-'         .'
+14B :                          ::''\          _.'            |
+14C .' .-.             .-.           `.      .'               |
+15A : /'$$|           .@"$\           `.   .'              _.-'
+16A .'|$u$$|          |$$,$$|           |  <            _.-'
+17B | `:$$:'          :$$$$$:           `.  `.       .-'
+18C          :                  `"--'             |    `-.     \
+19B :##.       ==             .###.       `.      `.    `\
+20B |##:                      :###:        |        >     >
+21A |#'     `..'`..'          `###'        x:      /     /
+22C \                                   xXX|     /    ./
+23A \                                xXXX'|    /   ./
+23B /`-.                                  `.  /   /
+23C :    `-  ...........,                   | /  .'
+26B |         ``:::::::'       .            |<    `.
+27C |             ```          |           x| \ `.:``.
+30A |                         .'    /'   xXX|  `:`M`M':.
+30B |    |                    ;    /:' xXXX'|  -'MMMMM:'
+30C `.  .'                   :    /:'       |-'MMMM.-'
+32B |  |                   .'   /'        .'MMM.-'
+35A `'`'                   :  ,'          |MMM<
+35B |                     `'            |tbap\
+36A \                                  :MM.-'
+37A \                 |              .''
+38A \.               `.            /
+38B /     .:::::::.. :           /
+38C |     .:::::::::::`.         /
+40A |   .:::------------\       /
+41A /   .''               >::'  /
+42B `',:                 :    .'
+42C `:.:' 
+Enter key:
+26B
+|         ``:::::::'       .            |<    `.
+Enter key:
+38C
+|     .:::::::::::`.         /
+Enter key:
+10A
+quu..__
+Enter key:
+42C
+`:.:' 
 ```
 ## 9. Дневник отладки должен содержать дату и время сеансов отладки и основные события (ошибки в сценарии и программе, нестандартные ситуации) и краткие комментарии к ним. В дневнике отладки приводятся сведения об использовании других ЭВМ, существенном участии преподавателя и других лиц в написании и отладке программы.
 
 | № |  Лаб. или дом. | Дата | Время | Событие | Действие по исправлению | Примечание |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| 1 | дом. | 02.06.23 | 18:00 | Башня | - | - |
+| 1 | дом. | 10.06.23 | 18:00 | Дом родной | - | - |
 ## 10. Замечания автора по существу работы — Написание команд для отработки навыков работы в ОС UNIX.
 [Контест](https://codeforces.com/contest/1814/submission/201016894)
 
 [Дорешка](https://codeforces.com/contest/1814/submission/202877281)
 ## 11. Выводы
-После выполнения работы, были получены навыки хранения разряженных матриц и работы с ними.
+После выполнения работы, были получены навыки обощенного программирования на C посредством void-указателей и memcpy, написания макросов, а так же написания эффективных сортировок и поисков. Улучшено понимание механизмов выделения памяти в C, а именно, стало очевидным различие между аллокацией "в стеке" (автоматическая) и "в куче" (динамическая).
 Недочёты при выполнении задания могут быть устранены следующим образом: —
 
 Подпись студента _________________

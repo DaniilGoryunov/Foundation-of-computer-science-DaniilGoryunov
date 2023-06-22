@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7
+CMAKE_SOURCE_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build
+CMAKE_BINARY_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/kp7.dir/depend.make
@@ -70,46 +70,62 @@ include CMakeFiles/kp7.dir/progress.make
 include CMakeFiles/kp7.dir/flags.make
 
 CMakeFiles/kp7.dir/sources/main.c.o: CMakeFiles/kp7.dir/flags.make
-CMakeFiles/kp7.dir/sources/main.c.o: /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/main.c
+CMakeFiles/kp7.dir/sources/main.c.o: /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/main.c
 CMakeFiles/kp7.dir/sources/main.c.o: CMakeFiles/kp7.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/kp7.dir/sources/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/kp7.dir/sources/main.c.o -MF CMakeFiles/kp7.dir/sources/main.c.o.d -o CMakeFiles/kp7.dir/sources/main.c.o -c /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/kp7.dir/sources/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/kp7.dir/sources/main.c.o -MF CMakeFiles/kp7.dir/sources/main.c.o.d -o CMakeFiles/kp7.dir/sources/main.c.o -c /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/main.c
 
 CMakeFiles/kp7.dir/sources/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kp7.dir/sources/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/main.c > CMakeFiles/kp7.dir/sources/main.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/main.c > CMakeFiles/kp7.dir/sources/main.c.i
 
 CMakeFiles/kp7.dir/sources/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kp7.dir/sources/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/main.c -o CMakeFiles/kp7.dir/sources/main.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/main.c -o CMakeFiles/kp7.dir/sources/main.c.s
 
-CMakeFiles/kp7.dir/sources/dbl_vec.c.o: CMakeFiles/kp7.dir/flags.make
-CMakeFiles/kp7.dir/sources/dbl_vec.c.o: /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/dbl_vec.c
-CMakeFiles/kp7.dir/sources/dbl_vec.c.o: CMakeFiles/kp7.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/kp7.dir/sources/dbl_vec.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/kp7.dir/sources/dbl_vec.c.o -MF CMakeFiles/kp7.dir/sources/dbl_vec.c.o.d -o CMakeFiles/kp7.dir/sources/dbl_vec.c.o -c /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/dbl_vec.c
+CMakeFiles/kp7.dir/sources/int_vec.c.o: CMakeFiles/kp7.dir/flags.make
+CMakeFiles/kp7.dir/sources/int_vec.c.o: /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/int_vec.c
+CMakeFiles/kp7.dir/sources/int_vec.c.o: CMakeFiles/kp7.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/kp7.dir/sources/int_vec.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/kp7.dir/sources/int_vec.c.o -MF CMakeFiles/kp7.dir/sources/int_vec.c.o.d -o CMakeFiles/kp7.dir/sources/int_vec.c.o -c /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/int_vec.c
 
-CMakeFiles/kp7.dir/sources/dbl_vec.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kp7.dir/sources/dbl_vec.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/dbl_vec.c > CMakeFiles/kp7.dir/sources/dbl_vec.c.i
+CMakeFiles/kp7.dir/sources/int_vec.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kp7.dir/sources/int_vec.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/int_vec.c > CMakeFiles/kp7.dir/sources/int_vec.c.i
 
-CMakeFiles/kp7.dir/sources/dbl_vec.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kp7.dir/sources/dbl_vec.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/dbl_vec.c -o CMakeFiles/kp7.dir/sources/dbl_vec.c.s
+CMakeFiles/kp7.dir/sources/int_vec.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kp7.dir/sources/int_vec.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/int_vec.c -o CMakeFiles/kp7.dir/sources/int_vec.c.s
+
+CMakeFiles/kp7.dir/sources/matrix.c.o: CMakeFiles/kp7.dir/flags.make
+CMakeFiles/kp7.dir/sources/matrix.c.o: /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/matrix.c
+CMakeFiles/kp7.dir/sources/matrix.c.o: CMakeFiles/kp7.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/kp7.dir/sources/matrix.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/kp7.dir/sources/matrix.c.o -MF CMakeFiles/kp7.dir/sources/matrix.c.o.d -o CMakeFiles/kp7.dir/sources/matrix.c.o -c /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/matrix.c
+
+CMakeFiles/kp7.dir/sources/matrix.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kp7.dir/sources/matrix.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/matrix.c > CMakeFiles/kp7.dir/sources/matrix.c.i
+
+CMakeFiles/kp7.dir/sources/matrix.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kp7.dir/sources/matrix.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/matrix.c -o CMakeFiles/kp7.dir/sources/matrix.c.s
 
 # Object files for target kp7
 kp7_OBJECTS = \
 "CMakeFiles/kp7.dir/sources/main.c.o" \
-"CMakeFiles/kp7.dir/sources/dbl_vec.c.o"
+"CMakeFiles/kp7.dir/sources/int_vec.c.o" \
+"CMakeFiles/kp7.dir/sources/matrix.c.o"
 
 # External object files for target kp7
 kp7_EXTERNAL_OBJECTS =
 
 kp7: CMakeFiles/kp7.dir/sources/main.c.o
-kp7: CMakeFiles/kp7.dir/sources/dbl_vec.c.o
+kp7: CMakeFiles/kp7.dir/sources/int_vec.c.o
+kp7: CMakeFiles/kp7.dir/sources/matrix.c.o
 kp7: CMakeFiles/kp7.dir/build.make
 kp7: CMakeFiles/kp7.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable kp7"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable kp7"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/kp7.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -121,6 +137,6 @@ CMakeFiles/kp7.dir/clean:
 .PHONY : CMakeFiles/kp7.dir/clean
 
 CMakeFiles/kp7.dir/depend:
-	cd /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7 /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7 /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build/CMakeFiles/kp7.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7 /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7 /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build/CMakeFiles/kp7.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/kp7.dir/depend
 

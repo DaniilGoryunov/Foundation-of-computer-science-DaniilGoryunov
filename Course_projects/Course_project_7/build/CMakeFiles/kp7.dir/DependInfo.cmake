@@ -8,8 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/dbl_vec.c" "CMakeFiles/kp7.dir/sources/dbl_vec.c.o" "gcc" "CMakeFiles/kp7.dir/sources/dbl_vec.c.o.d"
-  "/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/main.c" "CMakeFiles/kp7.dir/sources/main.c.o" "gcc" "CMakeFiles/kp7.dir/sources/main.c.o.d"
+  "/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/int_vec.c" "CMakeFiles/kp7.dir/sources/int_vec.c.o" "gcc" "CMakeFiles/kp7.dir/sources/int_vec.c.o.d"
+  "/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/main.c" "CMakeFiles/kp7.dir/sources/main.c.o" "gcc" "CMakeFiles/kp7.dir/sources/main.c.o.d"
+  "/Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/sources/matrix.c" "CMakeFiles/kp7.dir/sources/matrix.c.o" "gcc" "CMakeFiles/kp7.dir/sources/matrix.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

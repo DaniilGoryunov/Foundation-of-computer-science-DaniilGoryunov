@@ -29,7 +29,7 @@ uint iter_get_val(iter* it) {
     return it->prev->next->val;
 }
 
-void add_el(iter* it, uint el) {
+void insert(iter* it, uint el) {
     node* elem = malloc(sizeof(node));
     elem->val = el;
     if (it->lst->size == 1) {
@@ -55,7 +55,7 @@ void add_el(iter* it, uint el) {
     it->lst->size++;
 }
 
-void delete_el(iter* it) {
+void erase(iter* it) {
     if (it->prev == NULL) {
         return;
     }

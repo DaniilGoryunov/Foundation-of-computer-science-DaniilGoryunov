@@ -80,7 +80,23 @@ bool set_size(int_vec *v, int new_size){
     return true;
 }
 
-int_vec init(){
+void vectorResize(int_vec *v, size_t newSize) {
+    v->size = newSize;
+    if (newSize > v->cap) {
+        v->cap = newSize;
+        v->buf = realloc(v->buf, v->cap * sizeof(int));
+    }
+}
+
+void vectorInsert(int_vec *v, size_t index, int value) {
+    vectorResize(v, v->size + 1);
+    for (size_t i = (v->size - 1);i > index;i--) {
+        v->buf[i] = v->buf[i - 1];
+    }
+    v->buf[index] = value;
+}
+
+int_vec init(void){
     int_vec v;
     v.cap = MIN_CAP;
     v.head = 0;

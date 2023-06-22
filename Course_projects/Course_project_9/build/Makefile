@@ -57,10 +57,10 @@ RM = /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7
+CMAKE_SOURCE_DIR = /Users/admin/Desktop/МАИ/первый/лабы/kp9
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build
+CMAKE_BINARY_DIR = /Users/admin/Desktop/МАИ/первый/лабы/kp9/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build/CMakeFiles /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/admin/Desktop/МАИ/первый/лабы/kp9/build/CMakeFiles /Users/admin/Desktop/МАИ/первый/лабы/kp9/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/admin/Desktop/МАИ/первый/лабы/Foundation-of-computer-science-DaniilGoryunov/Course_projects/Course_project_7/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/admin/Desktop/МАИ/первый/лабы/kp9/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,48 +117,48 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named kp7
+# Target rules for targets named kp9
 
 # Build rule for target.
-kp7: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kp7
-.PHONY : kp7
+kp9: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kp9
+.PHONY : kp9
 
 # fast build rule for target.
-kp7/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp7.dir/build.make CMakeFiles/kp7.dir/build
-.PHONY : kp7/fast
+kp9/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp9.dir/build.make CMakeFiles/kp9.dir/build
+.PHONY : kp9/fast
 
-sources/int_vec.o: sources/int_vec.c.o
-.PHONY : sources/int_vec.o
+sources/key.o: sources/key.c.o
+.PHONY : sources/key.o
 
 # target to build an object file
-sources/int_vec.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp7.dir/build.make CMakeFiles/kp7.dir/sources/int_vec.c.o
-.PHONY : sources/int_vec.c.o
+sources/key.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp9.dir/build.make CMakeFiles/kp9.dir/sources/key.c.o
+.PHONY : sources/key.c.o
 
-sources/int_vec.i: sources/int_vec.c.i
-.PHONY : sources/int_vec.i
+sources/key.i: sources/key.c.i
+.PHONY : sources/key.i
 
 # target to preprocess a source file
-sources/int_vec.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp7.dir/build.make CMakeFiles/kp7.dir/sources/int_vec.c.i
-.PHONY : sources/int_vec.c.i
+sources/key.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp9.dir/build.make CMakeFiles/kp9.dir/sources/key.c.i
+.PHONY : sources/key.c.i
 
-sources/int_vec.s: sources/int_vec.c.s
-.PHONY : sources/int_vec.s
+sources/key.s: sources/key.c.s
+.PHONY : sources/key.s
 
 # target to generate assembly for a file
-sources/int_vec.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp7.dir/build.make CMakeFiles/kp7.dir/sources/int_vec.c.s
-.PHONY : sources/int_vec.c.s
+sources/key.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp9.dir/build.make CMakeFiles/kp9.dir/sources/key.c.s
+.PHONY : sources/key.c.s
 
 sources/main.o: sources/main.c.o
 .PHONY : sources/main.o
 
 # target to build an object file
 sources/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp7.dir/build.make CMakeFiles/kp7.dir/sources/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp9.dir/build.make CMakeFiles/kp9.dir/sources/main.c.o
 .PHONY : sources/main.c.o
 
 sources/main.i: sources/main.c.i
@@ -166,7 +166,7 @@ sources/main.i: sources/main.c.i
 
 # target to preprocess a source file
 sources/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp7.dir/build.make CMakeFiles/kp7.dir/sources/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp9.dir/build.make CMakeFiles/kp9.dir/sources/main.c.i
 .PHONY : sources/main.c.i
 
 sources/main.s: sources/main.c.s
@@ -174,32 +174,8 @@ sources/main.s: sources/main.c.s
 
 # target to generate assembly for a file
 sources/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp7.dir/build.make CMakeFiles/kp7.dir/sources/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp9.dir/build.make CMakeFiles/kp9.dir/sources/main.c.s
 .PHONY : sources/main.c.s
-
-sources/matrix.o: sources/matrix.c.o
-.PHONY : sources/matrix.o
-
-# target to build an object file
-sources/matrix.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp7.dir/build.make CMakeFiles/kp7.dir/sources/matrix.c.o
-.PHONY : sources/matrix.c.o
-
-sources/matrix.i: sources/matrix.c.i
-.PHONY : sources/matrix.i
-
-# target to preprocess a source file
-sources/matrix.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp7.dir/build.make CMakeFiles/kp7.dir/sources/matrix.c.i
-.PHONY : sources/matrix.c.i
-
-sources/matrix.s: sources/matrix.c.s
-.PHONY : sources/matrix.s
-
-# target to generate assembly for a file
-sources/matrix.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kp7.dir/build.make CMakeFiles/kp7.dir/sources/matrix.c.s
-.PHONY : sources/matrix.c.s
 
 # Help Target
 help:
@@ -209,16 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... kp7"
-	@echo "... sources/int_vec.o"
-	@echo "... sources/int_vec.i"
-	@echo "... sources/int_vec.s"
+	@echo "... kp9"
+	@echo "... sources/key.o"
+	@echo "... sources/key.i"
+	@echo "... sources/key.s"
 	@echo "... sources/main.o"
 	@echo "... sources/main.i"
 	@echo "... sources/main.s"
-	@echo "... sources/matrix.o"
-	@echo "... sources/matrix.i"
-	@echo "... sources/matrix.s"
 .PHONY : help
 
 

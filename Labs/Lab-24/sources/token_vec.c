@@ -1,4 +1,4 @@
- #include <stdlib.h>
+#include <stdlib.h>
 #include "headers/token_vec.h"
 #define MIN_CAP 32
 

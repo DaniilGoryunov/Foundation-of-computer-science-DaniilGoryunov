@@ -246,32 +246,63 @@ int main(){
 Подпись преподавателя _____________________
 ## 8. Распечатка протокола 
 ```
-admin@MacBook-Pro-2 Course_project_6 % clang -std=c99 -pedantic -Wall kp6_1.c 
-admin@MacBook-Pro-2 Course_project_6 % ./a.out database.txt bin.bin           
-26 lines are written
-admin@MacBook-Pro-2 Course_project_6 % clang -std=c99 -pedantic -Wall kp6_2.c 
-admin@MacBook-Pro-2 Course_project_6 % ./a.out bin.bin -p 3 3                 
-Dautov
-Zhdanov
-Zhuravlyov
-Ivanov
-Karimov
-Kolomytseva
-Larin
-Medvedev
-Nosov
-Postnov
-Saraykin
-Sviridov
-Sedov
-Filatov
+admin@MacBook-Pro-2 build % ./kp7          
+1 2 3
+4 5 6
+7 8 9
+CIP:
+0
+3
+6
+PI:
+0
+1
+2
+0
+1
+2
+0
+1
+2
+YE:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Matrix:
+
+1 2 3 
+4 5 6 
+7 8 9 
+
+
+1 2 3 
+4 3 6 
+7 8 9 
+
+
+6
+Divided matrix:
+
+1 2 0 
+4 3 0 
+7 8 1 
 ```
 ## 9. Дневник отладки должен содержать дату и время сеансов отладки и основные события (ошибки в сценарии и программе, нестандартные ситуации) и краткие комментарии к ним. В дневнике отладки приводятся сведения об использовании других ЭВМ, существенном участии преподавателя и других лиц в написании и отладке программы.
 
 | № |  Лаб. или дом. | Дата | Время | Событие | Действие по исправлению | Примечание |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| 1 | дом. | 02.06.23 | 18:00 | Башня | - | - |
+| 1 | дом. | 16.06.23 | 18:00 | дом милый дом | - | - |
 ## 10. Замечания автора по существу работы — Написание команд для отработки навыков работы в ОС UNIX.
+
+[Контест](https://codeforces.com/contest/1839/submission/208334485)
+
+[Дорешка](https://codeforces.com/contest/1839/submission/209167788)
 
 ## 11. Выводы
 После выполнения работы, были получены навыки хранения разряженных матриц и работы с ними.

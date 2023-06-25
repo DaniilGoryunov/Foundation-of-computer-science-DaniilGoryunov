@@ -1,5 +1,6 @@
 #include "headers/tree_stack.h"
 #include <stdlib.h>
+#include <stdbool.h>
 
 void ts_init(tree_stack *s){
     s->first = NULL;
@@ -12,11 +13,14 @@ bool ts_is_empty(tree_stack *s){
     return false;
 }
 
-void ts_push(tree_stack *s, tree val){
-    ts_node *new_node = malloc(sizeof(tree));
+bool ts_push(tree_stack *s, tree val){
+    ts_node *new_node = malloc(sizeof(ts_node));
+    if (new_node == NULL)
+        return false;
     new_node->val = val;
     new_node->next = s->first;
     s->first = new_node;
+    return true;
 }
 
 tree ts_pop(tree_stack *s){

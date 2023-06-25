@@ -16,5 +16,5 @@ typedef struct{
 void ts_init(tree_stack *s);
 void ts_destroy(tree_stack *s);
 tree ts_pop(tree_stack *s);
-void ts_push(tree_stack *s, tree val);
 bool ts_is_empty(tree_stack *s);
+bool ts_push(tree_stack *s, tree val);

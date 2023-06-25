@@ -39,18 +39,17 @@ int main(void){
 
     printf("Matrix:\n");
     print_matr(m);    
-    matrixSet(&m, 1, 1, 3);
+    // matrixSet(&m, 1, 1, 3);
     print_matr(m);   
     printf("\n");
     printf("%d\n", matrixGet(&m, 1, 2));
-    matrixSet(&m, 1, 1, 3);
+    //matrixSet(&m, 1, 1, 3);
     int idx_max = abs_max(m);
     int max_column = get_el(m.PI, idx_max);
     divide_column(m, max_column, get_el(m.YE, idx_max));
     printf("Divided matrix:\n");
     print_matr(m);
 
-    
     destroy(m.CIP);
     destroy(m.PI);
     destroy(m.YE);

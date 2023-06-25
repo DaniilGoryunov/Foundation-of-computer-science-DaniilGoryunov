@@ -124,19 +124,21 @@ void print_matr(matrix m){
     int idx_line = 0, column = 0;
     for (int i = 0; i < get_size(m.PI); i++){
         // printf("    DEBUG: i = %d  idx_line = %d    ", i, idx_line);
-        if (i == get_el(m.CIP, idx_line)){
-            if (column != m.width && i != 0){
-                print_zeros(m.width - column);
-            }
-            printf("\n");
-            idx_line++;
-            if (get_el(m.CIP, idx_line - 1) == get_el(m.CIP, idx_line)) {
-                print_zeros(m.width);
+        if (idx_line < m.lines)
+            if (i == get_el(m.CIP, idx_line)){
+                if (column != m.width && i != 0){
+                    print_zeros(m.width - column);
+                }
                 printf("\n");
                 idx_line++;
-            }
-            column = 0;
-        } 
+                if (idx_line < m.lines)
+                    if (get_el(m.CIP, idx_line - 1) == get_el(m.CIP, idx_line)) {
+                        print_zeros(m.width);
+                        printf("\n");
+                        idx_line++;
+                    }
+                column = 0;
+            } 
         if (get_el(m.PI, i) > column) {
             print_zeros(get_el(m.PI, i) - column);
             column = get_el(m.PI, i);
@@ -152,12 +154,6 @@ void print_matr(matrix m){
     }
     printf("\n");
     // printf("width: %d\n", width);
-}
-int abs(int a) {
-    if (a < 0) {
-        return -a;
-    }
-    return a;
 }
 
 // return el's idx in PI or YE

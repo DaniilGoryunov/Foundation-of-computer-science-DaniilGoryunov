@@ -16,19 +16,14 @@ void udtSort(Udt *udt)
     Udt second;
     Udt third;
     Udt tmp;
-
     if (cap < 2)                                                   
         return;
-
     udtCreate(&second, cap);                              
     udtCreate(&third, cap);                               
     udtCreate(&tmp, cap);                                 
-
     max = udtFront(udt);                                          
-
     udtPop(udt);                                                    
     udtPush(&second, max);                                
-
     while (!udtEmpty(udt))                                         
     {
         if (udtFront(udt)._key > max._key)                         
@@ -45,16 +40,13 @@ void udtSort(Udt *udt)
                 udtPush(&third, udtFront(&second));   
                 udtPop(&second);                               
             }
-
             udtPush(&third, udtFront(udt));              
             udtPop(udt);                                          
-
             while (!udtEmpty(&second))                        
             {
                 udtPush(&third, udtFront(&second));   
                 udtPop(&second);                               
             }
-
             udtSwap(&third, &second);                    
         }
     }

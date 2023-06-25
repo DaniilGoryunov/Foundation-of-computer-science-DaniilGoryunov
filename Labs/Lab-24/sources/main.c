@@ -223,16 +223,8 @@ int main() {
     tree expr_t = postfix_to_tree(&list);
     print_tree(expr_t);
     printf("Number of vars: %d\n", num_of_vars(expr_t));
-    printf("Input a\n");
-    char a,b,c;
-    scanf("%s",&a);
-    printf("Input b\n");
-    scanf("%s",&b);
-    printf("Input c\n");
-    scanf("%s",&c);
     tkn_destroy(&input);
     tkn_destroy(&list);
     destroy_root(expr_t);
-    printf("Calculate: 1297");
     return 0;
 }

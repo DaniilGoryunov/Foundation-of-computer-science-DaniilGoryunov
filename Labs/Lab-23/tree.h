@@ -17,6 +17,8 @@ void DeleteNode(TreeNode *root, float data);
 uint MinDepth(TreeNode *root);
 float IsLeafonLevel(TreeNode *node, uint current_level, uint finish_level);
 float GetMin(TreeNode *node);
+float GetLastLeaf(TreeNode *node, uint fin_level);
+uint getMaxDepth(TreeNode *tree, int depth);
 
 struct TreeNode{
     float data;

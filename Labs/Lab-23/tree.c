@@ -153,6 +153,18 @@ uint MinDepth(TreeNode *root){
     return fmin(l,r) + 1;
 }
 
+uint getMaxDepth(TreeNode *tree, int depth) {
+    if (tree == NULL)
+        return depth;
+    return fmax(getMaxDepth(tree->left, depth + 1), getMaxDepth(tree->right, depth + 1));
+}
+
+float GetLastLeaf(TreeNode *node, uint fin_lev){
+    uint cur_lev = 1;
+    printf("%d", fin_lev);
+    return IsLeafonLevel(node, cur_lev, fin_lev);
+}
+
 float GetMin(TreeNode *node){
     uint current_level = 1, finish_level = MinDepth(node);
     return IsLeafonLevel(node, current_level, finish_level);
@@ -161,10 +173,10 @@ float GetMin(TreeNode *node){
 float IsLeafonLevel(TreeNode *node, uint current_level, uint finish_level){
     if (current_level == finish_level && IsLeaf(node))
         return node->data;
-    else if (node->left != NULL && ((!IsLeaf(node->left) && current_level != finish_level) || (IsLeaf(node->left))))
-       return IsLeafonLevel(node->left, ++current_level, finish_level);
     else {
-        assert(node->right != NULL && ((!IsLeaf(node->right) && current_level != finish_level) || (IsLeaf(node->right))));
-        return IsLeafonLevel(node->right, ++current_level, finish_level);  
+        if (node->left != NULL )
+            return IsLeafonLevel(node->left, ++current_level, finish_level);
+        if (node->right != NULL)    
+            return IsLeafonLevel(node->right, ++current_level, finish_level);  
     }
 }
